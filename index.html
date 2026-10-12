@@ -1,0 +1,1980 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4edda"><meta name="description" content="Cuaderno local de planificación de ensayos teatrales">
+<title>ENTReACTOS V2.3 CONSOLIDADA · Cuaderno de ensayos</title>
+<style>
+:root{--paper:#f4edda;--pale:#fcf8ee;--aged:#e9dec4;--ink:#271f15;--muted:#7a6e59;--line:#d6c8a5;--line2:#e5dabb;--carmine:#94262c;--carmine2:#7a1f24;--olive:#55613a;--gold:#a37c33;--scene:#2c6a93;--scene-bg:#dfeaf3;--music:#6e51a0;--music-bg:#e9e2f6;--dance:#a3611a;--dance-bg:#fbe8cf;--brk:#6e6a60;--brk-bg:#e6e2d7;--bad:#a02424;--bad-bg:#f6e0da;--ok:#3f6b32;--ok-bg:#e8f0da;--serif:Georgia,'Iowan Old Style','Times New Roman',serif;--sans:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font:15.5px/1.55 var(--serif)}[hidden]{display:none!important}button,input,select,textarea{font:inherit;font-size:16px}button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}:is(button,input,select,textarea):focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(14px,2.4vw,34px)}
+.appbar{display:flex;align-items:center;gap:16px;padding:10px 0 9px;border-bottom:2px solid var(--ink)}
+.brand{font:italic 500 24px/1 var(--serif);white-space:nowrap}.brand em{font-style:normal;color:var(--carmine)}
+#proj-title{border:1px solid transparent;background:transparent;border-radius:6px;font:italic 500 16px var(--serif);color:var(--muted);padding:7px 10px;min-height:40px;flex:1;min-width:120px;max-width:430px}#proj-title:hover{border-color:var(--line)}#proj-title:focus{border-color:var(--gold);color:var(--ink);background:#fffdf7;outline:none}
+.save{font:700 10.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--olive);white-space:nowrap}.save.bad{color:var(--carmine)}
+.nav{display:flex;align-items:stretch;gap:6px;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
+.ngroup{display:flex;gap:4px;padding:7px 0}.nsep{width:1px;background:var(--line);margin:9px 3px;flex:none}
+.ntab{border:0;background:transparent;border-radius:6px;padding:9px 13px;min-height:46px;font:650 12px var(--sans);color:var(--muted);white-space:nowrap}.ntab:hover{color:var(--ink);background:var(--aged)}.ntab.active{background:var(--ink);color:var(--paper)}.ntab.minor{font-weight:600;font-size:11.5px;padding:8px 11px;color:#8d8069}
+main{padding:16px 0 42px;min-height:55vh}.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin:6px 0 14px;flex-wrap:wrap}.sec-head .intro{color:var(--muted);font-style:italic;font-size:13.5px;margin:5px 0 0;max-width:620px}
+.overline{font:800 10px var(--sans);letter-spacing:.18em;color:var(--carmine);margin:0 0 5px;text-transform:uppercase}h2{font:500 clamp(22px,3vw,30px)/1.1 var(--serif);margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fffdf7;border:1px solid #c3b18c;border-radius:6px;color:var(--ink);min-height:46px;padding:10px 15px;font:650 12px var(--sans)}.btn:hover{background:var(--aged)}.btn.primary{background:var(--carmine);border-color:var(--carmine2);color:#fff8ee}.btn.primary:hover{background:var(--carmine2)}.btn.danger{color:var(--carmine);border-color:#cf9a94}.btn.icon{width:46px;padding:0;flex:none}.btn.sm{min-height:40px;padding:7px 11px;font-size:11.5px}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.link{border:0;background:none;color:var(--carmine);text-decoration:underline;min-height:44px;padding:4px 8px;display:inline-flex}
+svg.ic{width:17px;height:17px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.badge svg.ic{width:13px;height:13px}.lockchip svg.ic{width:12px;height:12px}
+.card{background:var(--pale);border:1px solid var(--line);border-radius:10px;padding:15px 17px}.card h3{font:500 19px var(--serif);margin:0 0 10px}.listcard{margin-top:14px}
+.tchip{display:inline-flex;font:700 9.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;border-radius:4px;padding:3px 7px;vertical-align:2px}.t-scene{background:var(--scene-bg);color:#22536f;border:1px solid #9db9cf}.t-music{background:var(--music-bg);color:#56407e;border:1px solid #b3a3d3}.t-dance{background:var(--dance-bg);color:#7c4712;border:1px solid #dfb481}
+.notice{padding:12px 15px;border:1px solid var(--line);border-left:4px solid var(--gold);background:var(--pale);border-radius:6px;margin:10px 0;font-size:14px;display:flex;gap:8px;align-items:flex-start}.notice.error{border-left-color:var(--bad);background:var(--bad-bg);color:#701d1d}
+.empty{padding:22px 4px;color:var(--muted);font-style:italic}.helper{font:12px/1.55 var(--sans);color:var(--muted);margin:6px 0}
+.calbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2px 0 6px}.calnav{display:flex;align-items:center;gap:8px}.caldate h1{font:500 25px/1.15 var(--serif);margin:0}.caldate p{margin:2px 0 0;font:600 12px var(--sans);color:var(--muted)}.calactions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}#cal-jump{max-width:230px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font:600 10.5px var(--sans);color:var(--muted);margin:2px 0 6px}.sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid rgba(0,0,0,.18)}.sw.s1{background:var(--scene-bg);border-color:var(--scene)}.sw.s2{background:var(--music-bg);border-color:var(--music)}.sw.s3{background:var(--dance-bg);border-color:var(--dance)}.sw.s4{background:var(--brk-bg);border-color:var(--brk)}.sw.s5{background:repeating-linear-gradient(-45deg,rgba(122,106,70,.22) 0 4px,transparent 4px 9px)}.sw.s6{background:var(--bad-bg);border-color:var(--bad)}
+.meter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 4px}.meter-bar{flex:1;min-width:220px;height:12px;border-radius:6px;overflow:hidden;display:flex;border:1px solid var(--line);background:var(--pale)}.m-work{background:var(--scene)}.m-brk{background:var(--brk)}.m-free{background:repeating-linear-gradient(-45deg,rgba(122,106,70,.16) 0 5px,transparent 5px 11px)}.meter small{font:600 11px var(--sans);color:var(--muted);white-space:nowrap}.meter small b{color:var(--ink);font-size:12px}.meter .neg,.meter .neg b{color:var(--carmine)}
+.tl{margin:10px 0 4px;user-select:none;-webkit-user-select:none}.tl-hours{position:relative;height:24px;margin-right:38px}.tl-hours span{position:absolute;top:4px;transform:translateX(-50%);font:10.5px var(--sans);color:var(--muted);white-space:nowrap}
+.tl-track{position:relative;margin-right:38px;background:var(--pale);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tl-gap{position:absolute;top:0;bottom:0;z-index:0;display:flex;align-items:flex-end;justify-content:center;background:repeating-linear-gradient(-45deg,rgba(122,106,70,.07) 0 6px,transparent 6px 13px);pointer-events:none}.tl-gap span{font:650 9.5px var(--sans);letter-spacing:.07em;color:var(--muted);background:rgba(252,248,238,.92);padding:2px 6px;border-radius:3px;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:95%}
+.tl-b{position:absolute;height:76px;z-index:2;border:1px solid;border-radius:7px;cursor:pointer;text-align:left;padding:6px 9px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:2px}.tl-b b{font:600 12.5px/1.2 var(--sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tl-b small{font:500 10.5px/1.2 var(--sans);opacity:.82;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-b.scene{background:var(--scene-bg);border-color:#8fb2cb;color:#1c4257}.tl-b.music{background:var(--music-bg);border-color:#b1a1d1;color:#4c3773}.tl-b.dance{background:var(--dance-bg);border-color:#dcb079;color:#6f420f}.tl-b.locked::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:currentColor;opacity:.5}
+.tl-b.bad{box-shadow:inset 0 0 0 2.5px var(--bad)}.tl-b.bad::before{content:"";position:absolute;right:0;top:0;width:15px;height:15px;background:var(--bad);clip-path:polygon(0 0,100% 0,100% 100%);border-top-right-radius:6px}
+.tl-break{position:absolute;top:0;bottom:0;z-index:3;border:0;background:var(--brk-bg);border-inline:1.5px dashed var(--brk);cursor:pointer;padding:0;overflow:visible;min-width:2px}.tl-break span{font:700 9px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#5b574d;background:rgba(252,250,243,.9);padding:2px 6px;margin-top:3px;border-radius:3px;white-space:nowrap;position:absolute;left:50%;transform:translateX(-50%)}
+.crow{display:grid;grid-template-columns:76px 1fr auto;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line2)}.crow-when b{font:700 14px var(--sans)}.crow-when span{display:block;font:10.5px var(--sans);color:var(--muted)}.crow-main{min-width:0}.crow-main b{font-size:16.5px;font-weight:500}.crow-actions{display:flex;gap:6px}
+.crow-issues{margin:4px 0 0;padding-left:16px;color:var(--bad);font:11.5px/1.5 var(--sans);list-style:disc;grid-column:2/-1}.crow-issues li{margin:1px 0}
+.lockchip{display:inline-flex;align-items:center;gap:4px;font:700 10px var(--sans);text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:2px 6px;margin-left:8px;vertical-align:2px}
+.pendingbox{border-top:3px double var(--ink);margin-top:24px;padding-top:8px}.mini-h{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}.pend-row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line2);font:13px var(--sans);flex-wrap:wrap}
+.prep{display:grid;grid-template-columns:minmax(300px,2fr) minmax(340px,3fr);gap:16px;align-items:start}
+.cat-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}.searchbox{display:flex;align-items:center;gap:7px;border:1px solid #c9b997;border-radius:6px;background:#fffdf7;padding:0 10px;min-height:44px;flex:1;min-width:140px;max-width:280px;color:var(--muted)}.searchbox input{border:0;background:transparent;min-height:42px;padding:0;width:100%}
+.cat-list{max-height:560px;overflow:auto;overscroll-behavior:contain}.cat-row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line2)}.cat-row .lrow-main{flex:1;min-width:0}.cat-row b{font-size:15.5px;font-weight:500}
+.mini-new{margin:8px 0;border:1px dashed var(--line);border-radius:8px;padding:8px 12px}.mini-new summary{cursor:pointer;min-height:40px;display:flex;align-items:center;font:650 12px var(--sans);color:var(--muted)}
+.prow{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line2);flex-wrap:wrap}.prow .lrow-main{flex:1;min-width:190px}.prow b{font-size:15.5px;font-weight:500}.prow small{display:block;font:11.5px/1.45 var(--sans);color:var(--muted)}.prow.locked{background:var(--aged);padding-inline:10px;border-radius:6px;margin:5px 0;border-bottom:0}.prow-ctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.stepper{display:flex;border:1px solid #c3b18c;border-radius:6px;overflow:hidden;background:#fffdf7}.stepper button{border:0;background:transparent;min-width:46px;min-height:44px;font:700 12px var(--sans)}.stepper button:hover{background:var(--aged)}.stepper input{border:0;border-inline:1px solid #d8cba8;width:64px;text-align:center;min-height:44px;border-radius:0}
+.prop-card{border:1px solid var(--line);border-radius:10px;background:#fffdf7;padding:13px 15px;margin:12px 0}.prop-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}.prop-head b{font:750 12.5px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--carmine)}.prop-head span{font:600 11.5px var(--sans);color:var(--muted)}
+.prop-ol{margin:8px 0 0;padding-left:20px;font:12.5px/1.65 var(--sans);columns:2;column-gap:26px}.prop-ol li{break-inside:avoid}.fixedli{list-style:none;margin-left:-20px;color:var(--muted)}
+.mini-tl{position:relative;height:38px;border:1px solid var(--line);border-radius:6px;background:var(--pale);margin:8px 0 0;overflow:hidden}.mini-b{position:absolute;top:5px;bottom:5px;border-radius:4px;min-width:2px}.mb-scene{background:var(--scene-bg);border:1px solid #8fb2cb}.mb-music{background:var(--music-bg);border:1px solid #b1a1d3}.mb-dance{background:var(--dance-bg);border:1px solid #dcb079}.mini-brk{position:absolute;top:0;bottom:0;background:var(--brk-bg);border-inline:1px dashed var(--brk);min-width:2px}.mini-a{position:absolute;left:5px;top:3px;font:9.5px var(--sans);color:var(--muted)}.mini-b2{position:absolute;right:5px;top:3px;font:9.5px var(--sans);color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:6px;font:750 10.5px var(--sans);letter-spacing:.05em;text-transform:uppercase;border-radius:5px;padding:5px 9px;border:1px solid}.badge.ok{background:var(--ok-bg);color:var(--ok);border-color:#a9bd8a}.badge.part{background:#f8ecd2;color:#8a5f14;border-color:#d8b96a}.badge.no{background:var(--bad-bg);color:var(--bad);border-color:#d5a49b}
+.lrow{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}.lrow-main{flex:1;min-width:230px}.lrow-main b{font-size:17px;font-weight:500}.lrow-main small{display:block;font:11.5px/1.5 var(--sans);color:var(--muted);margin-top:3px}.lrow-actions{display:flex;gap:6px;flex-wrap:wrap}
+.d-why{margin-top:6px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.d-why small{font:600 11px var(--sans);color:var(--muted)}
+.avrow{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line2);flex-wrap:wrap}.avrow>b{min-width:130px;font-size:14px;font-weight:500}.av-strip{position:relative;flex:1;min-width:140px;height:22px;background:repeating-linear-gradient(-45deg,rgba(122,106,70,.09) 0 5px,transparent 5px 11px);border:1px solid var(--line);border-radius:5px}.av-strip i{position:absolute;top:3px;bottom:3px;background:#ccdcae;border:1px solid #8b9a67;border-radius:3px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}.tag{background:#efe6cf;border:1px solid #ddceac;color:#5c4d2b;font:600 10.5px var(--sans);padding:3px 8px;border-radius:4px}
+.dayrow{border:1px solid var(--line);border-radius:10px;background:var(--pale);padding:12px 15px;margin:12px 0}.dayrow-head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}.dayrow-head b{font:500 18px var(--serif)}.dayrow-head small{display:block;font:600 11.5px var(--sans);color:var(--muted)}.break-controls{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:8px 0}
+label.f{display:flex;flex-direction:column;gap:5px;font:700 10.5px var(--sans);letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+input,select,textarea{border:1px solid #c9b997;background:#fffdf7;border-radius:6px;color:var(--ink);min-height:46px;padding:9px 12px;width:100%}textarea{font:13px/1.5 ui-monospace,Menlo,monospace;resize:vertical}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--carmine);min-height:0}label.check{display:flex;flex-direction:row;align-items:center;gap:9px;font:600 13px var(--sans);color:var(--ink);margin:8px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px}.bottom-align{align-self:end}.choices{display:flex;flex-wrap:wrap;gap:8px}.role-check{display:inline-flex;flex-direction:row;gap:8px;align-items:center;border:1px solid var(--line);border-radius:6px;padding:9px 12px;color:var(--ink);background:#fffaf1;font:600 12.5px var(--sans);text-transform:none;letter-spacing:0}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+dialog.dlg{border:1px solid var(--line);border-radius:12px;padding:0;width:min(700px,94vw);max-height:92dvh;box-shadow:0 14px 40px rgba(40,28,12,.22);color:var(--ink);background:var(--pale)}dialog.dlg.wide{width:min(1000px,96vw)}dialog.dlg::backdrop{background:rgba(30,24,15,.55)}dialog.dlg[open]{display:block}dialog.dlg.force{position:fixed;inset:0;margin:auto;z-index:90}
+.dlg-in{padding:18px 20px;overflow:auto;max-height:92dvh;overscroll-behavior:contain}.dlg header{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:10px}.dlg h3{font:500 21px var(--serif);margin:0}.dlg-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
+.sd-preview{margin:12px 0 4px;border-radius:6px;padding:10px 12px;font:12.5px/1.55 var(--sans)}.sd-preview.ok{background:var(--ok-bg);color:#33471f;border:1px solid #a9bd8a}.sd-preview.bad{background:var(--bad-bg);color:#701d1d;border:1px solid #d5a49b}.sd-preview ul{margin:6px 0 0;padding-left:18px}
+.call-warn{display:flex;gap:8px;align-items:center;background:var(--bad-bg);border:1px solid #d5a49b;border-left:4px solid var(--bad);color:#701d1d;border-radius:6px;padding:10px 12px;font:650 12.5px var(--sans);margin:10px 0}
+.cf-body{font:14px/1.6 var(--serif)}.cf-body ul,.cf-body ol{margin:8px 0;padding-left:20px}.warn-p{color:var(--carmine)}
+.opt-controls{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin:10px 0}.opt-controls label.f{max-width:200px}.opt-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}.opt-stat{border:1px solid var(--line);border-radius:8px;background:var(--pale);padding:10px 12px;font:600 11px var(--sans);color:var(--muted)}.opt-stat b{display:block;font:700 19px var(--sans);color:var(--ink);margin-top:2px}
+.opt-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0}.opt-table{border-collapse:collapse;width:100%;min-width:620px;font:12.5px/1.5 var(--sans)}.opt-table th,.opt-table td{padding:8px 10px;border-bottom:1px solid var(--line2);text-align:left;white-space:nowrap}.opt-table th{background:var(--aged);font:700 11px var(--sans)}.opt-table td.pos{color:var(--olive);font-weight:700}.opt-table td.neg{color:var(--carmine);font-weight:700}
+.pl-day{font:500 17px var(--serif);margin:16px 0 4px}.pl-day small{font:600 11.5px var(--sans);color:var(--muted)}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fdf6e4;padding:12px 18px;border-radius:8px;font:600 13px var(--sans);box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;transition:.22s;pointer-events:none;z-index:120;max-width:min(92vw,560px)}#toast.show{opacity:1;transform:translateX(-50%)}
+.appfoot{border-top:2px solid var(--ink);margin-top:8px;padding:14px 0 26px;color:var(--muted);font:10.5px var(--sans);letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:940px){.prep{grid-template-columns:1fr}}@media(max-width:700px){.grid2,.grid3,.break-controls{grid-template-columns:1fr}.crow{grid-template-columns:64px 1fr}.crow-actions{grid-column:2}.prop-ol{columns:1}.caldate h1{font-size:21px}.avrow>b{min-width:110px}}@media(max-width:540px){.appbar{gap:10px}.brand{font-size:20px}.calbar{flex-direction:column;align-items:stretch}.calactions{justify-content:flex-start}.crow{grid-template-columns:1fr}.crow-when{display:flex;gap:8px;align-items:baseline}}
+@media print{body{background:#fff}.appbar,.nav,.calactions,.calnav,#cal-pending,.crow-actions,.appfoot,#toast{display:none!important}main{padding:0}.tl-b,.tl-break{pointer-events:none}.dayrow{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="appbar">
+ <div class="brand">ENTRe<em>ACTOS</em><em>.</em></div>
+ <input id="proj-title" maxlength="180" placeholder="Nombre de la producción" aria-label="Nombre de la producción">
+ <span class="save" id="save-state" role="status" aria-live="polite">Guardado</span>
+</header>
+<nav class="nav" aria-label="Secciones">
+ <div class="ngroup" role="group" aria-label="Trabajo diario">
+  <button class="ntab active" data-tab="calendar" aria-current="page">Calendario</button>
+  <button class="ntab" data-tab="prepare">Preparar jornada</button>
+  <button class="ntab" data-tab="discover">¿Qué ensayamos?</button>
+ </div>
+ <span class="nsep" aria-hidden="true"></span>
+ <div class="ngroup" role="group" aria-label="Producción">
+  <button class="ntab minor" data-tab="cast">Reparto</button>
+  <button class="ntab minor" data-tab="scenes">Escenas</button>
+  <button class="ntab minor" data-tab="availability">Disponibilidad</button>
+  <button class="ntab minor" data-tab="days">Jornadas</button>
+  <button class="ntab minor" data-tab="data">Archivo</button>
+ </div>
+</nav>
+<div id="boot-banner" class="notice error" hidden><span><b>No se pudieron leer los datos guardados.</b> <span id="boot-banner-msg"></span>Se carga la demostración. Exporta o importa una copia JSON desde «Archivo» antes de editar.</span></div>
+<main>
+ <section id="tab-calendar" class="view" aria-label="Calendario">
+  <div class="calbar" id="calbar">
+   <div class="calnav">
+    <button class="btn icon" id="cal-prev" aria-label="Jornada anterior">‹</button>
+    <div class="caldate"><p class="overline">Jornada</p><h1 id="cal-title">—</h1><p id="cal-sub"></p></div>
+    <button class="btn icon" id="cal-next" aria-label="Jornada siguiente">›</button>
+   </div>
+   <div class="calactions">
+    <select id="cal-jump" aria-label="Ir a una jornada"></select>
+    <button class="btn" id="cal-share">Compartir convocatoria</button>
+    <button class="btn" id="cal-opt">Optimizar esperas</button>
+    <button class="btn" id="undo-opt" hidden>Deshacer</button>
+    <button class="btn" id="cal-print">Imprimir</button>
+    <button class="btn primary" id="cal-gen">Generar propuesta</button>
+   </div>
+  </div>
+  <div id="cal-notices"></div>
+  <div id="cal-meter"></div>
+  <div class="legend"><span><span class="sw s1"></span>Escena</span><span><span class="sw s2"></span>Música</span><span><span class="sw s3"></span>Coreografía</span><span><span class="sw s4"></span>Descanso</span><span><span class="sw s5"></span>Libre</span><span><span class="sw s6"></span>Conflicto</span></div>
+  <div id="cal-tl"></div>
+  <div id="cal-list"></div>
+  <div id="cal-pending"></div>
+ </section>
+
+ <section id="tab-prepare" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Trabajo diario</p><h2>Preparar jornada</h2><p class="intro">Elige unidades, ajusta duraciones y compara horarios. El calendario no cambia hasta que apliques una propuesta.</p></div></div>
+  <div class="prep">
+   <div class="card">
+    <div class="cat-head"><h3>Catálogo</h3><div class="searchbox"><input id="cat-search" type="search" placeholder="Buscar unidad…" aria-label="Buscar unidad"></div></div>
+    <div class="cat-list" id="cat-list"></div>
+   </div>
+   <div>
+    <div class="card">
+     <label class="f">Jornada a preparar<select id="prep-day"></select></label>
+     <details class="mini-new"><summary>+ Crear una jornada nueva</summary>
+      <div class="grid3"><label class="f">Fecha<input type="date" id="prep-new-date"></label><label class="f">Inicio<input type="time" id="prep-new-start" value="10:00"></label><label class="f">Fin<input type="time" id="prep-new-end" value="16:30"></label></div>
+      <label class="check"><input type="checkbox" id="prep-new-all"> Dar disponibilidad durante toda la jornada a quien aún no tenga franjas ese día</label>
+      <div class="actions"><button type="button" class="btn" id="prep-create">Crear jornada</button></div>
+     </details>
+     <div id="prep-items"></div>
+     <div id="prep-meter"></div>
+     <div class="actions"><button class="btn primary" id="prep-gen">Generar propuestas de horario</button></div>
+    </div>
+    <div class="card listcard"><h3>Propuestas para esta jornada</h3><div id="prep-props"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="tab-discover" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Trabajo diario</p><h2>¿Qué podemos ensayar?</h2><p class="intro">Qué se puede trabajar según quién puede venir ese día. Las ausencias se configuran por fecha y franja en «Disponibilidad».</p></div><div class="actions"><button class="btn" id="disc-propose">Preparar jornada con las disponibles</button></div></div>
+  <div class="card"><label class="f" style="max-width:340px">Jornada a consultar<select id="disc-day"></select></label></div>
+  <div class="card listcard"><h3>Reparto ese día</h3><div id="disc-cast"></div></div>
+  <div class="card listcard"><h3>Unidades del catálogo</h3><div id="disc-units"></div></div>
+ </section>
+
+ <section id="tab-cast" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Producción</p><h2>Reparto</h2><p class="intro">Intérpretes y personajes. Un personaje pertenece a una sola persona; una persona puede tener varios.</p></div></div>
+  <form id="actor-form" class="card"><h3 id="actor-form-title">Añadir intérprete</h3><input type="hidden" name="id"><div class="grid2"><label class="f">Intérprete<input name="name" maxlength="160" required placeholder="Nombre y apellidos"></label><label class="f">Personajes, separados por comas<input name="roles" maxlength="500" required placeholder="Inés, La Voz"></label></div><div class="actions"><button class="btn primary" type="submit">Guardar intérprete</button><button type="button" class="btn" id="actor-cancel" hidden>Cancelar edición</button></div></form>
+  <div id="cast-list" class="card listcard"></div>
+ </section>
+
+ <section id="tab-scenes" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Producción</p><h2>Escenas</h2><p class="intro">Unidades del catálogo. Cada repetición posterior es una sesión independiente con su propia duración.</p></div></div>
+  <form id="scene-form" class="card"><h3 id="scene-form-title">Añadir unidad</h3><input type="hidden" name="id"><div class="grid2"><label class="f">Título<input name="title" maxlength="160" required placeholder="La habitación"></label><label class="f">Duración (min)<input name="duration" type="number" min="1" max="1440" step="1" value="60" required></label></div><label class="f" style="margin-top:12px">Tipo de unidad<select name="type"><option>Escena</option><option>Coreografía</option><option>Música</option></select></label><p class="helper" style="margin-top:14px;margin-bottom:4px">Personajes necesarios</p><div id="roles-choices" class="choices"></div><div class="actions"><button class="btn primary" type="submit">Guardar unidad</button><button type="button" class="btn" id="scene-cancel" hidden>Cancelar edición</button></div></form>
+  <div id="scene-list" class="card listcard"></div>
+ </section>
+
+ <section id="tab-availability" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Producción</p><h2>Disponibilidad</h2><p class="intro">Franjas por fecha e intérprete; se admiten varios intervalos en un mismo día. Sin franjas, no disponible.</p></div></div>
+  <div class="card"><div class="grid2"><label class="f">Intérprete<select id="avail-actor"></select></label><label class="f">Jornada<select id="avail-day"></select></label></div>
+   <form id="availability-form"><div class="grid3" style="margin-top:12px"><label class="f">Desde<input type="time" name="start" value="10:00" required></label><label class="f">Hasta<input type="time" name="end" value="14:00" required></label><div class="bottom-align"><button class="btn primary" type="submit">Añadir franja</button></div></div></form></div>
+  <div class="card listcard"><h3>Franjas de esta persona ese día</h3><div id="avail-list"></div></div>
+  <div class="card listcard"><h3>Mapa de disponibilidad de la jornada</h3><div id="avail-map"></div></div>
+ </section>
+
+ <section id="tab-days" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Producción</p><h2>Jornadas</h2><p class="intro">Fechas, horarios, descanso y reglas de planificación.</p></div></div>
+  <form id="day-form" class="card"><h3 id="day-form-title">Añadir jornada</h3><input type="hidden" name="id"><div class="grid3"><label class="f">Fecha<input name="date" type="date" required></label><label class="f">Inicio<input name="start" type="time" value="10:00" required></label><label class="f">Fin<input name="end" type="time" value="14:00" required></label></div><div class="actions"><button class="btn primary" type="submit">Guardar jornada</button><button type="button" class="btn" id="day-cancel" hidden>Cancelar edición</button></div></form>
+  <div id="days-list"></div>
+  <div class="card listcard"><h3>Descanso de la jornada</h3><p class="helper">Un descanso común por jornada: nadie ensaya durante ese tiempo. «Flexible» solo indica que la hora puede ajustarse a mano; al guardar se comprueba el calendario y cualquier retirada de sesiones pide confirmación.</p>
+   <div class="break-controls"><label class="f">Jornada<select id="bk-day" aria-label="Jornada del descanso"></select></label><label class="f">Modalidad<select id="bk-mode"><option value="none">Sin descanso</option><option value="fixed">Fijo</option><option value="flexible">Flexible</option></select></label><label class="f">Duración (min)<input type="number" id="bk-dur" min="1" max="1439" step="1" placeholder="Ej. 30" inputmode="numeric"></label><label class="f">Comienzo<input type="time" id="bk-start" step="60"></label></div>
+   <div class="actions"><button type="button" class="btn" id="bk-propose">Proponer hora</button><button type="button" class="btn primary" id="bk-save">Guardar descanso</button><button type="button" class="btn danger" id="bk-clear">Quitar descanso</button></div>
+  </div>
+  <div class="card listcard"><h3>Reglas de planificación</h3>
+   <label class="check"><input type="checkbox" id="single-room" checked> Un solo espacio de ensayo: no pueden coincidir dos sesiones</label>
+   <label class="f" style="max-width:250px;margin-top:10px">Intervalo de búsqueda de inicio<select id="step"><option value="5">5 minutos</option><option value="10">10 minutos</option><option value="15">15 minutos</option><option value="30">30 minutos</option></select></label>
+   <p class="helper">Los inicios y límites de disponibilidad también se consideran; los cambios manuales aceptan cualquier minuto.</p>
+  </div>
+ </section>
+
+ <section id="tab-data" class="view" hidden>
+  <div class="sec-head"><div><p class="overline">Producción</p><h2>Proyecto y archivo</h2><p class="intro">Tus datos están en este navegador y dispositivo. Exporta copias JSON con frecuencia.</p></div></div>
+  <div class="card"><label class="f">Nombre de la producción<input id="title-input" maxlength="180"></label>
+   <div class="actions"><button class="btn primary" id="save-title">Guardar título</button><button class="btn" id="export">Exportar copia JSON</button><label class="btn">Importar copia JSON<input id="import" type="file" accept=".json,application/json" hidden></label></div><p class="helper" id="data-counts"></p></div>
+  <div class="card listcard"><h3>Empezar de nuevo</h3><p class="helper">Estas acciones sustituyen el proyecto actual y nunca se ejecutan solas. Descarga una copia antes. La demostración de 27 Generation Tour utiliza datos provisionales.</p><div class="actions"><button class="btn danger" id="new-blank">Crear proyecto vacío</button><button class="btn danger" id="new-demo">Restaurar demostración</button></div></div>
+  <div class="notice"><span><b>Almacenamiento local, sin sincronización.</b> No hay servidor ni cuenta. Otro navegador o dispositivo no verá estos datos: usa exportar e importar. En iPad/iPhone, las restricciones de Safari con archivos locales pueden afectar a la persistencia.</span></div>
+ </section>
+</main>
+<footer class="appfoot"><span>ENTReACTOS · cuaderno de planificación de ensayos</span><span>Los cálculos y restricciones se ejecutan en este dispositivo; nada se envía fuera.</span></footer>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<dialog class="dlg" id="dlg-confirm" aria-labelledby="cf-title"><div class="dlg-in"><h3 id="cf-title">Confirmar</h3><div id="cf-body" class="cf-body"></div><div class="dlg-foot"><button class="btn" id="cf-no">Cancelar</button><button class="btn primary" id="cf-ok">Confirmar</button></div></div></dialog>
+
+<dialog class="dlg" id="dlg-session" aria-labelledby="sd-title"><div class="dlg-in">
+ <header><div><p class="overline">Sesión de ensayo</p><h3 id="sd-title">—</h3><p class="helper" id="sd-meta"></p></div><button class="btn icon" id="sd-close" aria-label="Cerrar">×</button></header>
+ <div class="grid3">
+  <label class="f">Jornada<select id="sd-day"></select></label>
+  <label class="f">Comienzo<input type="time" id="sd-start"></label>
+  <label class="f">Duración (min)<div class="stepper"><button type="button" data-sdstep="-15" aria-label="Restar 15 minutos">−15</button><input type="number" id="sd-dur" min="1" max="1440" inputmode="numeric" aria-label="Duración en minutos"><button type="button" data-sdstep="15" aria-label="Sumar 15 minutos">+15</button></div></label>
+ </div>
+ <label class="check"><input type="checkbox" id="sd-lock"> Fijar manualmente (las propuestas futuras no la moverán)</label>
+ <label class="check"><input type="checkbox" id="sd-excl"> Excluir de la planificación automática</label>
+ <div id="sd-preview" class="sd-preview"></div>
+ <div class="actions">
+  <button class="btn primary" id="sd-save">Guardar cambios</button>
+  <button class="btn" id="sd-dup">Duplicar</button>
+  <button class="btn danger" id="sd-del">Retirar del calendario</button>
+  <button class="btn danger" id="sd-kill">Eliminar sesión</button>
+ </div>
+</div></dialog>
+
+<dialog class="dlg" id="dlg-break" aria-labelledby="bk2-title"><div class="dlg-in">
+ <header><div><p class="overline">Descanso</p><h3 id="bk2-title">Descanso de la jornada</h3></div><button class="btn icon" id="bk2-close" aria-label="Cerrar">×</button></header>
+ <label class="f">Jornada<select id="bk2-day"></select></label>
+ <div class="break-controls"><label class="f">Modalidad<select id="bk2-mode"><option value="none">Sin descanso</option><option value="fixed">Fijo</option><option value="flexible">Flexible</option></select></label><label class="f">Duración (min)<input type="number" id="bk2-dur" min="1" max="1439" step="1" placeholder="Ej. 30" inputmode="numeric"></label><label class="f">Comienzo<input type="time" id="bk2-start" step="60"></label></div>
+ <div class="actions"><button class="btn" id="bk2-propose">Proponer hora</button><button class="btn primary" id="bk2-save">Guardar descanso</button><button class="btn danger" id="bk2-clear">Quitar descanso</button></div>
+</div></dialog>
+
+<dialog class="dlg" id="dlg-call" aria-labelledby="cl-title"><div class="dlg-in">
+ <header><div><p class="overline">Compartir</p><h3 id="cl-title">Convocatoria para WhatsApp</h3><p class="helper">El texto es editable. Nada se envía automáticamente.</p></div><button class="btn icon" id="cl-close" aria-label="Cerrar">×</button></header>
+ <div class="grid2"><label class="f">Jornada<select id="call-day"></select></label><label class="f">Modalidad<select id="call-mode"><option value="all">Convocatoria completa</option><option value="one">Convocatoria individual</option></select></label></div>
+ <div class="grid2" style="margin-top:12px"><label class="f">Intérprete (individual)<select id="call-person"></select></label><label class="f">Lugar del ensayo<input id="call-place" maxlength="300" placeholder="Lugar por confirmar"></label></div>
+ <label class="f" style="margin-top:12px">Observaciones<textarea id="call-notes" maxlength="3000" rows="3" placeholder="Opcional"></textarea></label>
+ <div id="call-warning" class="call-warn" hidden></div>
+ <label class="f" style="margin-top:10px">Vista previa<textarea id="call-preview" rows="14" spellcheck="false"></textarea></label>
+ <div class="dlg-foot"><button class="btn" id="cl-close2">Cerrar</button><button class="btn primary" id="cl-copy">Copiar convocatoria</button></div>
+</div></dialog>
+
+<dialog class="dlg wide" id="dlg-plan" aria-labelledby="pl-title"><div class="dlg-in">
+ <header><div><p class="overline">Planificación global · propuesta sin aplicar</p><h3 id="pl-title">Generar propuesta</h3><p class="helper" id="pl-summary"></p></div><button class="btn icon" id="pl-close" aria-label="Cerrar">×</button></header>
+ <div id="pl-body"></div>
+ <div class="dlg-foot"><button class="btn" id="pl-discard">Descartar</button><button class="btn primary" id="pl-apply">Aplicar propuesta</button></div>
+</div></dialog>
+
+<dialog class="dlg wide" id="dlg-opt" aria-labelledby="opt-title"><div class="dlg-in">
+ <header><div><p class="overline">Convocatorias · propuesta sin aplicar</p><h3 id="opt-title">Optimizar esperas del reparto</h3><p class="helper">Se reordenan las sesiones no fijadas de cada jornada para reducir la espera; las fijadas no se mueven.</p></div><button class="btn icon" id="opt-close" aria-label="Cerrar">×</button></header>
+ <div class="opt-controls"><label class="f">Espera tolerable (min)<input type="number" id="opt-threshold" min="0" max="480" step="5" value="60" inputmode="numeric"></label><button class="btn" id="opt-recalculate">Recalcular</button><span class="helper">Penalización ×4 sobre el exceso del umbral.</span></div>
+ <div id="opt-stats"></div>
+ <div class="opt-table-wrap"><table class="opt-table" id="opt-table"></table></div>
+ <div id="opt-note"></div>
+ <div class="dlg-foot"><button class="btn" id="opt-discard">Descartar</button><button class="btn primary" id="opt-apply">Aplicar propuesta</button></div>
+</div></dialog>
+
+<script>
+
+/* ENTReACTOS — Núcleo independiente y comprobable. Sin dependencias. */
+(function(root,factory){
+  const api=factory();
+  if(typeof module==='object' && module.exports)module.exports=api;
+  if(root)root.EntreactosCore=api;
+})(typeof window!=='undefined'?window:null,function(){
+'use strict';
+const VERSION=3, KEY='entreactos.integrado.v1', BACKUP_KEY=KEY+'.respaldo'; // Mantener la clave histórica para abrir proyectos V1
+const clone=x=>JSON.parse(JSON.stringify(x));
+const minute=s=>{if(typeof s!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(s))return NaN;return Number(s.slice(0,2))*60+Number(s.slice(3));};
+const clock=n=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
+const overlap=(a,b,c,d)=>a<d&&c<b; // intervalos semiabiertos
+const isoDate=s=>typeof s==='string'&&/^\d{4}-\d\d-\d\d$/.test(s)&&!Number.isNaN(new Date(s+'T12:00:00').getTime())&&new Date(s+'T12:00:00').getFullYear()===Number(s.slice(0,4))&&new Date(s+'T12:00:00').getMonth()+1===Number(s.slice(5,7))&&new Date(s+'T12:00:00').getDate()===Number(s.slice(8));
+const tidy=s=>String(s||'').trim().replace(/\s+/g,' ');
+const uniq=a=>Array.from(new Set(a));
+const ident=()=>typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():'id-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10);
+function sample(){
+ // DATOS PROVISIONALES DE DEMOSTRACIÓN; se cargan solo cuando no hay proyecto o se restaura expresamente.
+ const isoOffset=i=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+i);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');};
+ const days=[1,2,3].map((n,i)=>({id:'demo-day-'+n,date:isoOffset(n),start:'10:00',end:'16:30',break:null}));
+ const actors=[
+  {id:'demo-a1',name:'Cisco Lara',roles:['ÉL']},
+  {id:'demo-a2',name:'José Luis',roles:['Lorca']},
+  {id:'demo-a3',name:'Jorge Kent',roles:['Alberti','Diego','Dalí']},
+  {id:'demo-a4',name:'Víctor',roles:['Cernuda','Guillén','Aleixandre','Manuel Altolaguirre']},
+  {id:'demo-a5',name:'Marta',roles:['ELLA']},
+  {id:'demo-a6',name:'Belén',roles:['Guía','Champourcín','María Teresa']},
+  {id:'demo-a7',name:'Susana',roles:['Mallo','Zambrano']},
+  {id:'demo-a8',name:'Carmen Escudero',roles:['Salinas','Josefina de la Torre','Concha Méndez','Rosa Chacel','Dámaso Alonso','Marga Gil Roësset']}
+ ];
+ // El núcleo asigna intérpretes mediante nombres de PERSONAJE, no mediante nombres propios.
+ // Se elige un personaje existente por intérprete y unidad, sin inventar ningún rol.
+ const units=[
+  ['Bienvenida al Generation Tour','Escena',45,['ÉL','ELLA','Guía']],
+  ['Primera noche en el Café Aberasturi','Escena',60,['ÉL','ELLA','Lorca','Alberti','Cernuda','Mallo','Salinas']],
+  ['Él y Lorca','Escena',40,['ÉL','Lorca']],
+  ['Las mujeres del 27','Escena',50,['ELLA','Zambrano','Concha Méndez']],
+  ['El romance de la luna','Música',45,['ÉL','Lorca']],
+  ['La fiesta del 29','Coreografía',60,['ÉL','Lorca','Diego','Guillén','ELLA','Champourcín','Mallo','Josefina de la Torre']],
+  ['Alberti y María Teresa','Escena',35,['Alberti','María Teresa']],
+  ['Cernuda y la búsqueda de Filigrana','Escena',45,['ELLA','Cernuda']],
+  ['El encuentro con Marga','Escena',50,['ÉL','ELLA','Marga Gil Roësset']],
+  ['Despedida de 1936','Escena',60,['ÉL','ELLA','Lorca','Manuel Altolaguirre','Guía','Zambrano']]
+ ];
+ const scenes=units.map((u,i)=>({id:'demo-scene-'+(i+1),title:u[0],type:u[1],duration:u[2],roles:u[3]}));
+ const availability={};for(const a of actors){availability[a.id]={};for(const d of days)availability[a.id][d.date]=[{start:d.start,end:d.end}];}
+ return {version:VERSION,title:'27 Generation Tour · Demostración (provisional)',actors,scenes,days,availability,schedule:[],excluded:[],settings:{singleRoom:true,step:15}};
+}
+function blank(){return {version:VERSION,title:'Nueva producción',actors:[],scenes:[],days:[],availability:{},schedule:[],excluded:[],settings:{singleRoom:true,step:15}};}
+function validateState(s){
+ const fail=m=>{throw new Error('Copia no válida: '+m);};
+ if(!s||typeof s!=='object'||s.version!==VERSION)fail('versión de datos incompatible');
+ if(typeof s.title!=='string'||s.title.length>180)fail('título');
+ for(const key of ['actors','scenes','days','schedule','excluded'])if(!Array.isArray(s[key]))fail('falta '+key);
+ if(s.actors.length>200||s.scenes.length>400||s.days.length>180||s.schedule.length>400)fail('demasiados registros');
+ if(!s.availability||typeof s.availability!=='object'||Array.isArray(s.availability))fail('disponibilidad');
+ if(!s.settings||typeof s.settings!=='object'||typeof s.settings.singleRoom!=='boolean'||![5,10,15,30].includes(s.settings.step))fail('ajustes');
+ const ids=new Set();const checkId=(obj,kind)=>{if(!obj||typeof obj.id!=='string'||obj.id.length<1||obj.id.length>100||ids.has(kind+obj.id))fail('identificador '+kind);ids.add(kind+obj.id);};
+ const name=v=>typeof v==='string'&&tidy(v).length>0&&v.length<=160;
+ for(const a of s.actors){checkId(a,'actor:');if(!name(a.name)||!Array.isArray(a.roles)||a.roles.length>40||a.roles.some(r=>!name(r)))fail('intérprete/personajes');}
+ for(const x of s.scenes){checkId(x,'scene:');if(!['Escena','Coreografía','Música'].includes(x.type)||!name(x.title)||!Number.isInteger(x.duration)||x.duration<1||x.duration>1440||!Array.isArray(x.roles)||x.roles.length>80||x.roles.some(r=>!name(r)))fail('escena o duración');}
+ for(const d of s.days){checkId(d,'day:');if(!isoDate(d.date)||!Number.isFinite(minute(d.start))||!Number.isFinite(minute(d.end))||minute(d.end)<=minute(d.start))fail('fecha/horario de jornada');
+  if(d.break!==undefined&&d.break!==null){const b=d.break;if(!b||!['fixed','flexible'].includes(b.mode)||!Number.isInteger(b.duration)||b.duration<1||b.duration>=1440||!Number.isFinite(minute(b.start))||minute(b.start)<minute(d.start)||minute(b.start)+b.duration>minute(d.end))fail('descanso de '+d.date);}
+ }
+ for(const [actor,byDate] of Object.entries(s.availability)){if(typeof byDate!=='object'||!byDate||Array.isArray(byDate))fail('disponibilidad de '+actor);for(const [date,spans] of Object.entries(byDate)){if(!isoDate(date)||!Array.isArray(spans)||spans.length>100)fail('fecha de disponibilidad');for(const w of spans){if(!w||!Number.isFinite(minute(w.start))||!Number.isFinite(minute(w.end))||minute(w.end)<=minute(w.start))fail('franja de disponibilidad');}}}
+ const scheduled=new Set();for(const p of s.schedule){if(!p||typeof p.sceneId!=='string'||typeof p.dayId!=='string'||!Number.isFinite(minute(p.start))||typeof p.locked!=='boolean'||scheduled.has(p.sceneId))fail('asignación de calendario');scheduled.add(p.sceneId);}
+ if(s.schedule.some(p=>!s.scenes.some(x=>x.id===p.sceneId)||!s.days.some(x=>x.id===p.dayId)))fail('asignación a escena o jornada inexistente');
+ if(s.excluded.some(v=>typeof v!=='string'||!s.scenes.some(x=>x.id===v))||new Set(s.excluded).size!==s.excluded.length)fail('escenas excluidas');
+ return s;
+}
+/** Normaliza copias históricas V1 sin reemplazar IDs ni otros atributos. */
+function migrateState(input){
+ if(!input||typeof input!=='object'||![1,2,VERSION].includes(input.version))throw Error('Versión de datos incompatible (se admiten V1, V2 y V2.1).');
+ const next=clone(input);next.version=VERSION;
+ if(!Array.isArray(next.scenes))throw Error('Falta el listado de escenas.');
+ for(const sc of next.scenes){if(sc && sc.type===undefined)sc.type='Escena';}
+ if(!Array.isArray(next.days))throw Error('Falta el listado de jornadas.');
+ for(const d of next.days){if(d&&d.break===undefined)d.break=null;}
+ return validateState(next);
+}
+function owners(state,scene){
+ const result=[],missing=[],ambiguous=[];
+ for(const role of uniq(scene.roles.map(tidy))){const matches=state.actors.filter(a=>a.roles.some(r=>tidy(r).toLocaleLowerCase('es')===role.toLocaleLowerCase('es')));
+ if(!matches.length)missing.push(role);else if(matches.length>1)ambiguous.push(role);else result.push(matches[0].id);}
+ return {ids:uniq(result),missing,ambiguous};
+}
+function merged(spans){
+ const ordered=(spans||[]).map(x=>[minute(x.start),minute(x.end)]).filter(x=>Number.isFinite(x[0])&&x[1]>x[0]).sort((a,b)=>a[0]-b[0]);
+ const result=[];for(const w of ordered){const p=result[result.length-1];if(p&&w[0]<=p[1])p[1]=Math.max(p[1],w[1]);else result.push(w.slice());}return result;
+}
+function available(st,id,date,from,to){const windows=merged(st.availability[id]?.[date]);return windows.some(([a,b])=>a<=from&&b>=to);}
+/** Descansos activos de toda la compañía en una misma fecha.
+ *  Una jornada puede contener un descanso, que bloquea cualquier unidad del mismo día civil. */
+function breakWindows(st,date){return (st.days||[]).filter(d=>d.date===date&&d.break).map(d=>({dayId:d.id,from:minute(d.break.start),to:minute(d.break.start)+d.break.duration,mode:d.break.mode}));}
+function hitsBreak(st,entry,ix){const d=ix.days.get(entry.dayId),sc=ix.scenes.get(entry.sceneId);if(!d||!sc)return false;const a=minute(entry.start),b=a+sc.duration;return breakWindows(st,d.date).some(w=>overlap(a,b,w.from,w.to));}
+function participantOverlap(a,b){return a.some(x=>b.includes(x));}
+function collides(st,p,q,cache){
+ const d1=cache.days.get(p.dayId),d2=cache.days.get(q.dayId);
+ if(!d1||!d2||d1.date!==d2.date)return false;
+ const s1=cache.scenes.get(p.sceneId),s2=cache.scenes.get(q.sceneId);
+ if(!s1||!s2)return false;
+ const x=minute(p.start),y=minute(q.start);
+ if(!overlap(x,x+s1.duration,y,y+s2.duration))return false;
+ if(st.settings.singleRoom)return true;
+ return participantOverlap(cache.actors.get(s1.id).ids,cache.actors.get(s2.id).ids);
+}
+function index(st){return {days:new Map(st.days.map(d=>[d.id,d])),scenes:new Map(st.scenes.map(s=>[s.id,s])),actors:new Map(st.scenes.map(s=>[s.id,owners(st,s)]))};}
+function problems(st,assignments=st.schedule){
+ const result={};const ix=index(st);
+ for(const sc of st.scenes)result[sc.id]=[];
+ for(const entry of assignments){
+  const sc=ix.scenes.get(entry.sceneId);if(!sc)continue;
+  const out=result[sc.id],day=ix.days.get(entry.dayId),who=ix.actors.get(sc.id);
+  if(who.missing.length)out.push('Sin intérprete: '+who.missing.join(', ')+'.');
+  if(who.ambiguous.length)out.push('Personaje asignado a varios intérpretes: '+who.ambiguous.join(', ')+'.');
+  if(!sc.roles.length)out.push('La escena no tiene personajes.');
+  if(!day){out.push('La jornada asignada ya no existe.');continue;}
+  const from=minute(entry.start),to=from+sc.duration;
+  if(from<minute(day.start)||to>minute(day.end))out.push('Fuera de la jornada ('+day.start+'–'+day.end+').');
+  if(to>1440)out.push('El ensayo termina después de medianoche.');
+  if(hitsBreak(st,entry,ix))out.push('El ensayo coincide con un descanso programado.');
+  for(const aid of who.ids){if(!available(st,aid,day.date,from,to)){const actor=st.actors.find(a=>a.id===aid);out.push((actor?.name||aid)+' no está disponible durante todo el ensayo.');}}
+ }
+ for(let i=0;i<assignments.length;i++)for(let j=i+1;j<assignments.length;j++){
+  const a=assignments[i],b=assignments[j];if(!ix.scenes.has(a.sceneId)||!ix.scenes.has(b.sceneId)||!collides(st,a,b,ix))continue;
+  const aS=ix.scenes.get(a.sceneId),bS=ix.scenes.get(b.sceneId);
+  const common=ix.actors.get(a.sceneId).ids.filter(id=>ix.actors.get(b.sceneId).ids.includes(id)).map(id=>st.actors.find(x=>x.id===id)?.name||id);
+  const detail=common.length?'Coinciden: '+common.join(', ')+'.':'Solo hay un espacio de ensayo.';
+  result[a.sceneId].push('Solape con «'+bS.title+'». '+detail);
+  result[b.sceneId].push('Solape con «'+aS.title+'». '+detail);
+ }
+ return result;
+}
+function validPlacement(st,entry,other,ix){
+ const sc=ix.scenes.get(entry.sceneId),day=ix.days.get(entry.dayId),who=ix.actors.get(entry.sceneId);
+ if(!sc||!day||!sc.roles.length||who.missing.length||who.ambiguous.length)return false;
+ const start=minute(entry.start),end=start+sc.duration;
+ if(start<minute(day.start)||end>minute(day.end)||end>1440)return false;
+ if(hitsBreak(st,entry,ix))return false;
+ if(!who.ids.every(id=>available(st,id,day.date,start,end)))return false;
+ return !other.some(p=>collides(st,entry,p,ix));
+}
+function candidates(st,sc,ix){
+ const result=[];if(!sc.roles.length||ix.actors.get(sc.id).missing.length||ix.actors.get(sc.id).ambiguous.length)return result;
+ for(const d of [...st.days].sort((a,b)=>(a.date+a.start).localeCompare(b.date+b.start)||a.id.localeCompare(b.id))){
+  const min=minute(d.start),max=minute(d.end)-sc.duration;if(max<min)continue;
+  const times=new Set([min]);const step=st.settings.step;
+  for(let t=Math.ceil(min/step)*step;t<=max;t+=step)times.add(t);
+  for(const aid of ix.actors.get(sc.id).ids){for(const [a,b] of merged(st.availability[aid]?.[d.date])){if(a>=min&&a<=max)times.add(a);if(b-sc.duration>=min&&b-sc.duration<=max)times.add(b-sc.duration);}}
+  for(const t of [...times].sort((a,b)=>a-b)){if(t>max)continue;const item={sceneId:sc.id,dayId:d.id,start:clock(t),locked:false};if(validPlacement(st,item,[],ix))result.push(item);}
+ }
+ return result;
+}
+function reason(st,sc,ix,initial,selected,excluded){
+ if(excluded)return 'Excluida manualmente de la planificación.';
+ const who=ix.actors.get(sc.id);
+ if(!sc.roles.length)return 'La escena no tiene personajes asignados.';
+ if(who.missing.length)return 'Falta intérprete para: '+who.missing.join(', ')+'.';
+ if(who.ambiguous.length)return 'Asignación ambigua del personaje: '+who.ambiguous.join(', ')+'.';
+ if(!st.days.length)return 'No hay jornadas creadas.';
+ const longest=Math.max(...st.days.map(d=>minute(d.end)-minute(d.start)));
+ if(sc.duration>longest)return 'La escena necesita '+sc.duration+' min; la jornada más larga tiene '+longest+' min.';
+ if(!initial.length)return st.days.some(d=>d.break)?'No existe un hueco compatible con las disponibilidades y los descansos configurados. Prueba otra hora o duración de descanso.':'No existe una franja común suficiente entre las disponibilidades de todos sus intérpretes.';
+ const lockCount=selected.filter(x=>x.locked).length;
+ return 'Existe disponibilidad, pero no se encontró hueco compatible con los otros ensayos'+(lockCount?' y los '+lockCount+' bloques fijados':'')+(st.days.some(d=>d.break)?' y los descansos':'')+'. Puede haber otras combinaciones.';
+}
+/** Optimización determinista con búsqueda limitada y retroceso. Maximiza escenas colocadas.
+ *  Nunca inventa asignaciones: propuestas verificadas frente a todas las restricciones.
+ *  Las entradas manuales fijadas se conservan, incluso si contienen problemas (que se señalan).
+ */
+function plan(st, opts={}){
+ const ix=index(st),nodeLimit=Math.max(1,Math.min(150000,Number(opts.maxNodes)||20000));
+ const timeLimit=Number(opts.maxMillis)||1100;
+ const fixed=st.schedule.filter(p=>p.locked&&ix.scenes.has(p.sceneId)&&!st.excluded.includes(p.sceneId)).map(clone);
+ const pending=st.scenes.filter(sc=>!st.excluded.includes(sc.id)&&!fixed.some(p=>p.sceneId===sc.id));
+ const original=new Map(pending.map(sc=>[sc.id,candidates(st,sc,ix)]));
+ const entries=pending.map(sc=>({scene:sc,options:original.get(sc.id).filter(p=>!fixed.some(f=>collides(st,p,f,ix)))}));
+ const base=fixed.slice();let best=[],nodes=0,capped=false;
+ const fit=(cand,chosen)=>!chosen.some(p=>collides(st,p,cand,ix));
+ // Diversas pasadas voraces: soluciones iniciales verificadas, no demostraciones de optimalidad.
+ for(const mode of [0,1,2]){
+  const chosen=[],remaining=entries.slice();
+  while(remaining.length){
+   const choices=remaining.map(e=>({e,ok:e.options.filter(p=>fit(p,chosen))}));
+   choices.sort((a,b)=>mode===1?(b.e.scene.duration-a.e.scene.duration)||(a.ok.length-b.ok.length):mode===2?(a.e.scene.duration-b.e.scene.duration)||(a.ok.length-b.ok.length):(a.ok.length-b.ok.length)||(b.e.scene.duration-a.e.scene.duration));
+   const choice=choices[0];remaining.splice(remaining.indexOf(choice.e),1);
+   if(choice.ok.length)chosen.push(choice.ok[0]);
+  }
+  if(chosen.length>best.length)best=chosen;
+ }
+ const maxPossible=entries.filter(e=>e.options.length>0).length;
+ if(best.length!==maxPossible){
+  const start=Date.now();
+  const dfs=(remaining,chosen)=>{
+   if(best.length===maxPossible)return;
+   if(nodes>=nodeLimit||Date.now()-start>timeLimit){capped=true;return;}
+   nodes++;
+   if(chosen.length+remaining.length<=best.length)return;
+   if(!remaining.length){if(chosen.length>best.length)best=chosen.slice();return;}
+   const ranked=remaining.map(e=>({e,ok:e.options.filter(p=>fit(p,chosen))})).sort((a,b)=>a.ok.length-b.ok.length||b.e.scene.duration-a.e.scene.duration);
+   const selected=ranked[0],rest=remaining.filter(e=>e!==selected.e);
+   if(!selected.ok.length){dfs(rest,chosen);return;}
+   for(const item of selected.ok){chosen.push(item);dfs(rest,chosen);chosen.pop();if(best.length===maxPossible||capped)return;}
+   dfs(rest,chosen); // posibilidad de dejar una escena sin programar
+  };
+  dfs(entries,[]);
+ }
+ const result=base.concat(best);const scheduled=new Set(result.map(p=>p.sceneId));
+ const unscheduled=st.scenes.filter(sc=>!scheduled.has(sc.id)).map(sc=>({sceneId:sc.id,reason:reason(st,sc,ix,original.get(sc.id)||[],result,st.excluded.includes(sc.id))}));
+ return {schedule:result,unscheduled,stats:{placed:result.length,total:st.scenes.length,fixed:fixed.length,nodes,exhaustive:best.length===maxPossible||!capped,optimal:best.length===maxPossible||!capped,capped}};
+}
+function modify(st,sceneId,dayId,start){const next=clone(st);if(!next.scenes.some(s=>s.id===sceneId))throw Error('Escena no encontrada');if(!next.days.some(d=>d.id===dayId))throw Error('Jornada no encontrada');if(!Number.isFinite(minute(start)))throw Error('Hora no válida');next.schedule=next.schedule.filter(p=>p.sceneId!==sceneId);const placed={sceneId,dayId,start,locked:true};if(hitsBreak(next,placed,index(next)))throw Error('No se puede colocar un ensayo durante un descanso programado.');next.schedule.push(placed);next.excluded=next.excluded.filter(id=>id!==sceneId);return next;}
+function backupText(st){validateState(st);return JSON.stringify({format:'ENTReACTOS',version:VERSION,exportedAt:new Date().toISOString(),state:st},null,2);}
+function parseBackup(s){
+ const doc=JSON.parse(s);
+ // Aceptar copias exportadas V1/V2 y JSON de proyecto sin envoltorio.
+ if(doc&&doc.format==='ENTReACTOS'&&[1,2,VERSION].includes(doc.version))return migrateState(doc.state);
+ if(doc&&[1,2,VERSION].includes(doc.version)&&!('format' in doc))return migrateState(doc);
+ throw Error('El archivo no es una copia compatible de ENTReACTOS.');
+}
+function store(storage){return {
+ load(){let damaged=false;for(const k of [KEY,BACKUP_KEY]){try{const s=storage.getItem(k);if(s)return {state:migrateState(JSON.parse(s)),recovered:k===BACKUP_KEY,damaged};}catch(_){damaged=true;}}return {state:sample(),recovered:false,damaged};},
+ save(st){try{validateState(st);const old=storage.getItem(KEY);if(old){try{migrateState(JSON.parse(old));storage.setItem(BACKUP_KEY,old);}catch(_){/* No sobrescribir un respaldo con una copia ilegible. */}}storage.setItem(KEY,JSON.stringify(st));return {ok:true};}catch(e){return {ok:false,error:e.message||String(e)};}}
+ };}
+return {VERSION,KEY,BACKUP_KEY,blank,sample,validateState,owners,minute,clock,merged,available,overlap,breakWindows,hitsBreak,problems,validPlacement,candidates,reason,plan,modify,backupText,parseBackup,store,migrateState,index,collides,ident,clone,tidy};
+});
+
+
+</script>
+<script>
+
+'use strict';
+/* ENTReACTOS — Prototipo del optimizador de convocatorias (orden de escenas por jornada).
+ *
+ * Funciones puras, sin DOM ni dependencias externas. Sigue el patrón del núcleo base:
+ * funciona en Node (module.exports) y en el navegador (window.EntreactosOptimize).
+ * El núcleo base se inyecta como parámetro C para REUTILIZAR sus restricciones
+ * (owners, minute, clock, available...) en lugar de duplicarlas.
+ *
+ * DETERMINISMO: el presupuesto de búsqueda se mide en EVALUACIONES (número de
+ * órdenes probados), no en milisegundos de reloj. Misma entrada → misma salida,
+ * en cualquier máquina. Existe un freno de emergencia por tiempo (hardMillis)
+ * que en la práctica no se alcanza; si se alcanzara, el resultado seguiría
+ * siendo válido pero podría variar entre ejecuciones (se indica en stats).
+ */
+(function(root, factory){
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (root) root.EntreactosOptimize = api;
+})(typeof window !== 'undefined' ? window : null, function(){
+'use strict';
+
+const DEFAULTS = { T: 60, LAMBDA: 4, EVALS_PER_SCENE: 60, EXHAUSTIVE_MAX: 7 };
+
+function hashStr(s){
+  let h = 2166136261;
+  for (let i = 0; i < s.length; i++){ h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+/* Generador pseudoaleatorio determinista: el mismo día produce siempre el mismo
+   resultado (confianza y reproducibilidad en el trabajo teatral cotidiano). */
+function mulberry32(seed){
+  let a = seed >>> 0;
+  return function(){
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function shuffle(arr, rng){
+  for (let i = arr.length - 1; i > 0; i--){
+    const k = Math.floor(rng() * (i + 1));
+    const tmp = arr[i]; arr[i] = arr[k]; arr[k] = tmp;
+  }
+  return arr;
+}
+
+/* NOTA DE INTEGRACIÓN: el núcleo base NO exporta `index` ni `collides`
+   (son privadas del closure). Aquí se replican de forma idéntica para el
+   prototipo; en la implementación final basta con añadirlas a la lista de
+   exportaciones del núcleo (cambio de 1 línea, sin alterar comportamiento)
+   y sustituir buildIndex/collidesWith por C.index/C.collides. */
+function buildIndex(C, st){ return C.index(st); }
+function collidesWith(C, st, p, q, ix){ return C.collides(st, p, q, ix); }
+
+/* Prepara los datos inmutables de una jornada una sola vez: índice, reparto por
+   escena y ventanas de disponibilidad ya fusionadas y en minutos. Evita
+   recalcular merged()/owners() en cada evaluación (la evaluación es el coste
+   dominante de la búsqueda). */
+function prepareDay(C, st, dayId){
+  const ix = buildIndex(C, st);
+  const day = ix.days.get(dayId);
+  if (!day) return null;
+  const actorsOf = new Map(st.scenes.map(s => [s.id, C.owners(st, s).ids]));
+  const windows = new Map();
+  for (const a of st.actors){
+    const raw = (st.availability[a.id] && st.availability[a.id][day.date]) || [];
+    const ordered = raw
+      .map(w => [C.minute(w.start), C.minute(w.end)])
+      .filter(w => Number.isFinite(w[0]) && w[1] > w[0])
+      .sort((p, q) => p[0] - q[0]);
+    const mergedW = [];
+    for (const w of ordered){
+      const p = mergedW[mergedW.length - 1];
+      if (p && w[0] <= p[1]) p[1] = Math.max(p[1], w[1]); else mergedW.push(w.slice());
+    }
+    windows.set(a.id, mergedW);
+  }
+  return { ix, day, actorsOf, windows,
+           step: st.settings.step,
+           dayStart: C.minute(day.start), dayEnd: C.minute(day.end),
+           date: day.date };
+}
+function availableIn(windows, aid, from, to){
+  const ws = windows.get(aid) || [];
+  for (const w of ws) if (w[0] <= from && to <= w[1]) return true;
+  return false;
+}
+
+/* Decodificador (serial SGS): dada una prioridad `order` de escenas, construye el
+   horario colocando cada escena en el hueco factible MÁS TEMPRANO (rejilla de
+   settings.step), respetando: límites de la jornada, disponibilidad de cada
+   intérprete durante TODA la escena y ausencia de colisiones con las escenas
+   fijadas a mano (locked) y con las ya colocadas.
+   Devuelve null si alguna escena no cabe: ese orden se descarta (puerta de
+   factibilidad). El optimizador NUNCA desprograma escenas (objetivo 1) ni mueve
+   las fijadas a mano (objetivo 5). */
+function decodeDay(C, st, dayId, order, locked, pre){
+  pre = pre || prepareDay(C, st, dayId);
+  if (!pre) return null;
+  const {ix, actorsOf, windows, dayStart, dayEnd} = pre;
+  const placed = [];
+  const obstacles = (pre.external || []).concat(locked);
+  for (const sid of order){
+    const sc = ix.scenes.get(sid);
+    if (!sc) return null;
+    const dur=sc.duration, aids=actorsOf.get(sid)||[];
+    const times = new Set(pre.candidateSlots?.get(sid)||[]);
+    // Mantener la opción de comenzar exactamente al terminar otro ensayo,
+    // incluso cuando el límite no cae en la rejilla de 15 minutos.
+    for(const p of obstacles.concat(placed)){
+      const other=ix.scenes.get(p.sceneId);
+      if(other)times.add(C.minute(p.start)+other.duration);
+    }
+    times.add(dayStart);
+    let found = null;
+    for(const t of [...times].filter(t=>Number.isFinite(t)&&t>=dayStart&&t+dur<=dayEnd).sort((a,b)=>a-b)){
+      if(!aids.every(a=>availableIn(windows,a,t,t+dur)))continue;
+      const entry={sceneId:sid,dayId,start:C.clock(t),locked:false};
+      if(C.validPlacement(st,entry,obstacles.concat(placed),ix)){found=entry;break;}
+    }
+    if(!found)return null;
+    placed.push(found);
+  }
+  return placed;
+}
+
+/* Métricas de convocatoria de una jornada a partir de colocaciones concretas.
+   Por intérprete: primera escena (convocatoria), última (salida), permanencia,
+   tiempo útil (suma de duraciones), espera = permanencia − útil.
+   NOTA: el tiempo útil de cada intérprete es constante (no depende del orden),
+   así que minimizar la permanencia total equivale a minimizar la espera total. */
+function dayMetrics(C, st, dayId, placements, pre){
+  pre = pre || prepareDay(C, st, dayId);
+  const actorsOf = pre ? pre.actorsOf
+    : new Map(st.scenes.map(s => [s.id, C.owners(st, s).ids]));
+  const scenesById = new Map(st.scenes.map(s => [s.id, s]));
+  const byActor = new Map();
+  for (const p of placements){
+    const sc = scenesById.get(p.sceneId);
+    if (!sc) continue;
+    const t0 = C.minute(p.start), t1 = t0 + sc.duration;
+    for (const aid of (actorsOf.get(p.sceneId) || [])){
+      let r = byActor.get(aid);
+      if (!r){ r = { first: Infinity, last: -Infinity, work: 0 }; byActor.set(aid, r); }
+      if (t0 < r.first) r.first = t0;
+      if (t1 > r.last) r.last = t1;
+      r.work += sc.duration;
+    }
+  }
+  const actors = [...byActor.entries()].map(([aid, r]) => {
+    const a = st.actors.find(x => x.id === aid);
+    const stay = r.last - r.first;
+    // Un descanso entre la primera y la última escena NO se considera espera improductiva.
+    // Los descansos solapados entre jornadas de la misma fecha se fusionan para no duplicar minutos.
+    const day=pre?.day;
+    const windows=day?C.breakWindows(st,day.date).map(w=>[Math.max(r.first,w.from),Math.min(r.last,w.to)]).filter(([x,y])=>x<y).sort((x,y)=>x[0]-y[0]):[];
+    let count=0,left=-Infinity,right=-Infinity;
+    for(const [x,y] of windows){if(x>right){if(right>left)count+=right-left;left=x;right=y;}else right=Math.max(right,y);}if(right>left)count+=right-left;
+    return { id: aid, name: a ? a.name : aid,
+             first: r.first, last: r.last, stay, work: r.work, breakMin:count, idle: Math.max(0,stay - r.work - count) };
+  }).sort((a, b) => a.first - b.first);
+  const totalIdle = actors.reduce((s, a) => s + a.idle, 0);
+  const totalWork = actors.reduce((s, a) => s + a.work, 0);
+  const totalStay = actors.reduce((s, a) => s + a.stay, 0);
+  const totalBreak = actors.reduce((s,a)=>s+a.breakMin,0);
+  return { actors,
+           totalIdle,
+           maxIdle: actors.reduce((m, a) => Math.max(m, a.idle), 0),
+           totalWork, totalStay, totalBreak,
+           density: (totalStay-totalBreak) ? totalWork / (totalStay-totalBreak) : 1,
+           n: actors.length };
+}
+
+/* Función de coste: espera total + penalización por espera excesiva individual.
+   - El primer término cubre los objetivos 2 y 3 (permanencia/espera global).
+   - El segundo cubre el objetivo 4 (equidad): cada minuto de espera por encima
+     del umbral tolerable T cuenta LAMBDA veces. Configurable (T=60, LAMBDA=4). */
+function dayCost(metrics, T, LAMBDA){
+  if (T === undefined) T = DEFAULTS.T;
+  if (LAMBDA === undefined) LAMBDA = DEFAULTS.LAMBDA;
+  let over = 0;
+  for (const a of metrics.actors) over += Math.max(0, a.idle - T);
+  return metrics.totalIdle + LAMBDA * over;
+}
+
+/* Semilla voraz por agrupación de reparto: empieza por la escena con más
+   intérpretes y encadena siempre la escena que más reparto comparte con la
+   anterior. Suele producir un orden inicial ya muy bueno (barato de calcular). */
+function clusterSeed(flexIds, actorsOf, durOf){
+  const remaining = new Set(flexIds);
+  let cur = [...remaining].sort((a, b) =>
+    (actorsOf.get(b).length - actorsOf.get(a).length) || (durOf(b) - durOf(a)))[0];
+  const order = [cur];
+  remaining.delete(cur);
+  while (remaining.size){
+    const curSet = new Set(actorsOf.get(cur));
+    let best = null, bestScore = -1, bestDur = -1;
+    for (const sid of remaining){
+      let inter = 0;
+      for (const x of actorsOf.get(sid)) if (curSet.has(x)) inter++;
+      const d = durOf(sid);
+      if (inter > bestScore || (inter === bestScore && d > bestDur)){
+        best = sid; bestScore = inter; bestDur = d;
+      }
+    }
+    order.push(best); remaining.delete(best); cur = best;
+  }
+  return order;
+}
+
+function* permutations(arr){
+  const a = arr.slice(), n = a.length, c = new Array(n).fill(0);
+  yield a.slice();
+  let i = 0;
+  while (i < n){
+    if (c[i] < i){
+      const j = i % 2 ? c[i] : 0;
+      const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+      yield a.slice();
+      c[i]++; i = 0;
+    } else { c[i] = 0; i++; }
+  }
+}
+
+/* Escalada (hill climbing) con vecindario de reubicación: mueve una escena a
+   otra posición del orden. Primera mejora, vecinos en orden aleatorio
+   (determinista por semilla). Se detiene en óptimo local o al agotar el
+   presupuesto de evaluaciones. */
+function hillClimb(order, evaluate, rng, stats, shouldStop){
+  let cur = order.slice();
+  let curEv = evaluate(cur);
+  let curCost = curEv.cost;
+  let improved = true;
+  while (improved && !shouldStop()){
+    improved = false;
+    const moves = [];
+    for (let i = 0; i < cur.length; i++)
+      for (let j = 0; j < cur.length; j++)
+        if (i !== j) moves.push([i, j]);
+    shuffle(moves, rng);
+    for (const [i, j] of moves){
+      if (shouldStop()) break;
+      const nb = cur.slice();
+      const x = nb.splice(i, 1)[0];
+      nb.splice(j, 0, x);
+      const ev = evaluate(nb);
+      if (ev.cost < curCost - 1e-9){
+        cur = nb; curEv = ev; curCost = ev.cost; improved = true; break;
+      }
+    }
+  }
+  return { order: cur, ev: curEv };
+}
+
+/* Optimiza el orden de las escenas NO fijadas de una jornada.
+   Devuelve: métricas antes/después, colocaciones propuestas y estadísticas.
+   Garantías: no desprograma nada, no mueve escenas fijadas, resultado
+   determinista (el presupuesto se mide en evaluaciones, no en tiempo). */
+function optimizeDay(C, st, dayId, opts){
+  opts = opts || {};
+  const T = Number.isInteger(opts.T) && opts.T >= 0 && opts.T <= 480 ? opts.T : DEFAULTS.T;
+  const LAMBDA = Number.isFinite(opts.lambda) && opts.lambda >= 0 ? opts.lambda : DEFAULTS.LAMBDA;
+  // Sin corte por reloj: mismas entradas y parámetros producen siempre el mismo resultado.
+  const seed = hashStr(dayId + '|convocatorias-v1');
+  const rng = mulberry32(seed);
+  const stats = { evaluations: 0, seeds: 0, exhaustive: false, ms: 0 };
+
+  const dayPl = st.schedule.filter(p => p.dayId === dayId);
+  const locked = dayPl.filter(p => p.locked);
+  const flex = dayPl.filter(p => p.locked === false);
+  const pre = prepareDay(C, st, dayId);
+  if(!pre)return {changed:false, reason:'No existe la jornada.', dayId, stats};
+  // Otras jornadas de la MISMA FECHA son obstáculos inmutables.
+  pre.external=st.schedule.filter(p=>p.dayId!==dayId && pre.ix.days.get(p.dayId)?.date===pre.day.date);
+  const metricsBefore = dayMetrics(C, st, dayId, dayPl, pre);
+  const costBefore = dayCost(metricsBefore, T, LAMBDA);
+  const t0 = Date.now();
+
+
+  const done = (extra) => Object.assign({
+    dayId, changed: false, reason: 'sin cambios',
+    metricsBefore, metricsAfter: metricsBefore,
+    costBefore, costAfter: costBefore,
+    placements: dayPl, order: flex.map(p => p.sceneId), stats
+  }, extra || {});
+
+  // No optimizar un calendario que ya tiene incompatibilidades. El resultado
+  // nunca puede encubrir solapes, roles ambiguos o indisponibilidades.
+  if(dayPl.some(p=>!C.validPlacement(st,p,st.schedule.filter(q=>q!==p),pre.ix))){
+    stats.ms=Date.now()-t0;
+    return done({reason:'Esta jornada contiene conflictos previos. Corrígelos antes de optimizar.'});
+  }
+  // Candidatos generados por el planificador original: incluyen aperturas de
+  // jornada y límites exactos de disponibilidad, no solo la rejilla.
+  pre.candidateSlots=new Map(flex.map(p=>{
+    const sc=pre.ix.scenes.get(p.sceneId);
+    return [p.sceneId, C.candidates(st,sc,pre.ix).filter(x=>x.dayId===dayId).map(x=>C.minute(x.start))];
+  }));
+  if (!flex.length){
+    stats.ms = Date.now() - t0;
+    return done({ reason: 'la jornada no tiene escenas flexibles' });
+  }
+
+  const maxEvals = Number.isInteger(opts.maxEvals) && opts.maxEvals>0 ? opts.maxEvals : (DEFAULTS.EVALS_PER_SCENE * flex.length);
+  const shouldStop = () => {
+    if (stats.evaluations >= maxEvals) return true;
+    return false;
+  };
+
+  const ix = pre.ix, actorsOf = pre.actorsOf;
+  const durOf = sid => ix.scenes.get(sid).duration;
+  const baseOrder = [...flex]
+    .sort((a, b) => C.minute(a.start) - C.minute(b.start))
+    .map(p => p.sceneId);
+
+  const evaluate = (order) => {
+    stats.evaluations++;
+    const placed = decodeDay(C, st, dayId, order, locked, pre);
+    if (!placed) return { cost: Infinity };
+    const all = locked.concat(placed);
+    const m = dayMetrics(C, st, dayId, all, pre);
+    return { cost: m.totalIdle <= metricsBefore.totalIdle ? dayCost(m, T, LAMBDA) : Infinity, m, placed: all };
+  };
+
+  const seedEv = evaluate(baseOrder);
+  let best = { order: baseOrder, ev: {cost:costBefore, m:metricsBefore, placed:dayPl} };
+  if (seedEv.cost < best.ev.cost - 1e-9) best = {order:baseOrder, ev:seedEv};
+
+  if (flex.length <= (opts.exhaustiveMax || DEFAULTS.EXHAUSTIVE_MAX)){
+    // Hasta 7 escenas/día: fuerza bruta (≤5040 permutaciones, <1 s) con
+    // óptimo garantizado para el decodificador. El presupuesto de
+    // evaluaciones no aplica aquí.
+    stats.exhaustive = true;
+    for (const perm of permutations(baseOrder)){
+      const ev = evaluate(perm);
+      if (ev.cost < best.ev.cost - 1e-9) best = { order: perm, ev };
+    }
+    stats.seeds = 1;
+  } else {
+    // Multi-arranque simple: semillas en orden fijo (actual, voraz por
+    // agrupación, duraciones, aleatorias con semilla). Cada una escala hasta
+    // su óptimo local o hasta agotar el presupuesto de evaluaciones.
+    const seeds = [
+      baseOrder,
+      clusterSeed(baseOrder, actorsOf, durOf),
+      baseOrder.slice().sort((a, b) => durOf(b) - durOf(a)),
+      baseOrder.slice().sort((a, b) => durOf(a) - durOf(b))
+    ];
+    const nRand = Math.max(4, Math.min(24, flex.length));
+    for (let r = 0; r < nRand; r++) seeds.push(shuffle(baseOrder.slice(), rng));
+    for (const s of seeds){
+      if (shouldStop()) break;
+      stats.seeds++;
+      const res = hillClimb(s, evaluate, rng, stats, shouldStop);
+      if (res.ev.cost < best.ev.cost - 1e-9) best = { order: res.order, ev: res.ev };
+    }
+  }
+  stats.ms = Date.now() - t0;
+  if (best.ev.cost >= costBefore - 1e-9 || best.ev.m.totalIdle > metricsBefore.totalIdle)
+    return done({ reason: 'no se encontró una distribución mejor válida; el calendario permanece intacto' });
+  return { dayId, changed: true, reason: 'orden mejorado',
+           metricsBefore, metricsAfter: best.ev.m,
+           costBefore, costAfter: best.ev.cost,
+           placements: best.ev.placed, order: best.order, stats };
+}
+
+/* Hoja de convocatorias: por intérprete, hora de llegada (primera escena) y
+   hora de salida (fin de la última), más el detalle de sus escenas. */
+function callSheet(C, st, dayId, placements){
+  const pre = prepareDay(C, st, dayId);
+  const m = dayMetrics(C, st, dayId, placements, pre);
+  return m.actors.map(a => {
+    const scenes = placements
+      .filter(p => (pre.actorsOf.get(p.sceneId) || []).includes(a.id))
+      .sort((p, q) => C.minute(p.start) - C.minute(q.start))
+      .map(p => ({ title: pre.ix.scenes.get(p.sceneId).title,
+                   start: p.start,
+                   end: C.clock(C.minute(p.start) + pre.ix.scenes.get(p.sceneId).duration) }));
+    return { name: a.name, llegada: C.clock(a.first), salida: C.clock(a.last),
+             permanenciaMin: a.stay, descansoMin:a.breakMin, esperaMin: a.idle, escenas: scenes };
+  });
+}
+
+return { DEFAULTS, hashStr, mulberry32, buildIndex, collidesWith, prepareDay,
+         decodeDay, dayMetrics, dayCost,
+         clusterSeed, hillClimb, optimizeDay, callSheet };
+});
+
+
+</script>
+<script>
+
+/* ENTReACTOS V2.2 — Extensión de sesiones; el núcleo V2.1 permanece intacto. */
+(function(root,factory){const api=factory(root.EntreactosCore);if(typeof module==='object'&&module.exports)module.exports=api;if(root)root.EntreactosV22=api;})(typeof window!=='undefined'?window:globalThis,function(B){
+'use strict';
+const VERSION=4,KEY=B.KEY,BACKUP_KEY=B.BACKUP_KEY,clone=B.clone;
+function promote(input){
+ if(!input||typeof input!=='object')throw Error('No se reconoce este proyecto.');
+ if(input.version===VERSION){const s=clone(input);s.sessions??=[];s.meta??={place:'',notes:''};s.excluded??=[];return validate(s);}
+ const old=B.migrateState(input);const s={...old,version:VERSION,sessions:old.scenes.map(sc=>({id:sc.id,unitId:sc.id,duration:sc.duration})),meta:{place:'',notes:''}};
+ return validate(s);
+}
+function blank(){const old=B.blank();return {...old,version:VERSION,sessions:[],meta:{place:'',notes:''}};}
+function sample(){const old=B.sample();return {...old,version:VERSION,sessions:[],meta:{place:'',notes:''}};}
+function newSession(unit,duration=unit.duration){return {id:'session-'+B.ident(),unitId:unit.id,duration};}
+function unitOf(s,id){return s.scenes.find(sc=>sc.id===id);}
+function entryOf(s,sessionId){const se=s.sessions.find(x=>x.id===sessionId);if(!se)return null;const u=unitOf(s,se.unitId);return u?{...u,id:se.id,unitId:u.id,duration:se.duration}:null;}
+function runtime(s){return {version:B.VERSION,title:s.title,actors:s.actors,scenes:s.sessions.map(se=>entryOf(s,se.id)).filter(Boolean),days:s.days,availability:s.availability,schedule:s.schedule,excluded:s.excluded,settings:s.settings};}
+function validate(s){
+ if(!s||s.version!==VERSION||!Array.isArray(s.sessions)||s.sessions.length>400)throw Error('Modelo de sesiones no válido.');
+ if(!s.meta||typeof s.meta!=='object'||typeof s.meta.place!=='string'||typeof s.meta.notes!=='string'||s.meta.place.length>300||s.meta.notes.length>3000)throw Error('Lugar u observaciones inválidos.');
+ const ids=new Set();for(const se of s.sessions){if(!se||typeof se.id!=='string'||!se.id||se.id.length>100||ids.has(se.id)||!s.scenes.some(sc=>sc.id===se.unitId)||!Number.isInteger(se.duration)||se.duration<1||se.duration>1440)throw Error('Sesión incorrecta o unidad inexistente.');ids.add(se.id);}
+ const unique=new Set(s.scenes.map(x=>x.id));if(unique.size!==s.scenes.length)throw Error('Hay unidades duplicadas.');
+ // La comprobación histórica comprueba reparto, franjas, jornadas, sesiones y asignaciones.
+ B.validateState({...s,version:B.VERSION,scenes:s.scenes,schedule:[],excluded:[]});
+ B.validateState(runtime(s));
+ return s;
+}
+function parseBackup(text){const obj=JSON.parse(text);if(obj?.format==='ENTReACTOS'&&[1,2,3,4].includes(obj.version))return promote(obj.state);if([1,2,3,4].includes(obj?.version)&&!('format' in obj))return promote(obj);throw Error('Formato de copia desconocido.');}
+function backupText(s){validate(s);return JSON.stringify({format:'ENTReACTOS',version:VERSION,exportedAt:new Date().toISOString(),state:s},null,2);}
+function store(storage){return {
+ load(){let damaged=false;for(const key of [KEY,BACKUP_KEY]){try{const raw=storage.getItem(key);if(raw)return {state:promote(JSON.parse(raw)),recovered:key===BACKUP_KEY,damaged};}catch(_){damaged=true;}}return {state:sample(),recovered:false,damaged};},
+ save(s){try{validate(s);const old=storage.getItem(KEY);if(old){try{promote(JSON.parse(old));storage.setItem(BACKUP_KEY,old);}catch(_){}}storage.setItem(KEY,JSON.stringify(s));return {ok:true};}catch(e){return {ok:false,error:e.message};}}
+};}
+function validPlacement(s,p,other){const r=runtime(s);return B.validPlacement(r,p,other,B.index(r));}
+function problems(s,placements=s.schedule){return B.problems(runtime(s),placements);}
+function plan(s,opts){return B.plan(runtime(s),opts);}
+function modify(s,id,day,start){const r=B.modify(runtime(s),id,day,start),copy=clone(s);copy.schedule=r.schedule;copy.excluded=r.excluded;return copy;}
+function availableUnits(s,dayId){const d=s.days.find(x=>x.id===dayId);if(!d)return [];
+ return s.scenes.map(u=>{const people=B.owners(s,u);let id='__availability_'+u.id;while(s.sessions.some(se=>se.id===id))id+='_';const r=runtime({...s,sessions:s.sessions.concat({id,unitId:u.id,duration:u.duration})});const sc=r.scenes.find(x=>x.id===id),ix=B.index(r);const options=B.candidates(r,sc,ix).filter(p=>p.dayId===dayId&&B.validPlacement(r,p,s.schedule,ix));const spans=s.actors.filter(a=>people.ids.includes(a.id)).map(a=>B.merged(s.availability[a.id]?.[d.date]));
+ const commonIntervals=spans.length?spans.reduce((parts,actor)=>parts.flatMap(([x,y])=>actor.map(([a,b])=>[Math.max(x,a),Math.min(y,b)]).filter(([a,b])=>b>a)),[[B.minute(d.start),B.minute(d.end)]]):[];
+ const longest=Math.max(0,...commonIntervals.map(([a,b])=>b-a));
+ let status=options.length?'Disponible':longest>0?'Disponibilidad parcial':'No disponible';
+ if(people.missing.length||people.ambiguous.length||!people.ids.length)status='No disponible';
+ const reason=people.missing.length?'Sin intérprete: '+people.missing.join(', '):people.ambiguous.length?'Personaje ambiguo: '+people.ambiguous.join(', '):!people.ids.length?'Unidad sin intérpretes':options.length?'Se puede ensayar dentro de la jornada.':longest>0?`La coincidencia máxima es de ${longest} min frente a ${u.duration} min, o hay bloqueos de la jornada.`:'No hay coincidencia común entre los intérpretes.';
+ return {unit:u,actors:people.ids,status,reason,options,longest};});
+}
+/* Colocar EXACTAMENTE las sesiones elegidas; ningún otro día cambia. Los bloques externos
+   en la misma fecha son obstáculos, al igual que los fijados y los descansos. */
+function dayProposal(s,dayId,selected,mode='order'){
+ const d=s.days.find(x=>x.id===dayId);if(!d)return {ok:false,message:'Jornada no encontrada.'};
+ const requested=selected.map(x=>({...x})),ids=new Set(requested.map(x=>x.id));if(ids.size!==requested.length)return {ok:false,message:'Sesión duplicada en la selección.'};
+ const draft=clone(s),oldDay=s.schedule.filter(p=>p.dayId===dayId),locked=oldDay.filter(p=>p.locked);
+ for(const p of locked)if(!ids.has(p.sceneId))return {ok:false,message:'No se puede retirar una sesión fijada. Libérala previamente.'};
+ draft.sessions= draft.sessions.filter(x=>!ids.has(x.id)).concat(requested);
+ draft.schedule=draft.schedule.filter(p=>p.dayId!==dayId).concat(locked);
+ let r=runtime(draft),ix=B.index(r);
+ for(const p of locked)if(!B.validPlacement(r,p,r.schedule.filter(x=>x!==p),ix))return {ok:false,message:'Existe una sesión fijada incompatible: '+(ix.scenes.get(p.sceneId)?.title||p.sceneId)};
+ const unplaced=requested.filter(x=>!locked.some(p=>p.sceneId===x.id));
+ const originalOrder=unplaced.map(x=>x.id);
+ let order=originalOrder.slice();
+ if(mode!=='order'){
+  const people=new Map(r.scenes.map(sc=>[sc.id,new Set(B.owners(r,sc).ids)]));
+  const lead=order.splice(0,1)[0];if(lead){const out=[lead];while(order.length){const previous=people.get(out.at(-1));order.sort((a,b)=>{const overlap=id=>[...(people.get(id)||[])].filter(x=>previous?.has(x)).length;return overlap(b)-overlap(a)||a.localeCompare(b);});out.push(order.shift());}order=out;}
+ }
+ const cand=new Map(unplaced.map(x=>{const sc=ix.scenes.get(x.id);return [x.id,B.candidates(r,sc,ix).filter(p=>p.dayId===dayId)];}));
+ const limit=30000;let evaluations=0,solved=null;const current=locked.slice();
+ const obstacles=draft.schedule.filter(p=>p.dayId!==dayId);
+ function solve(k){if(evaluations++>limit)return false;if(k===order.length){solved=current.slice();return true;}
+  for(const opt of (cand.get(order[k])||[])){if(B.validPlacement(r,opt,obstacles.concat(current),ix)){current.push(opt);if(solve(k+1))return true;current.pop();}}
+  return false;
+ }
+ if(!solve(0)){const incompatible=order.filter(id=>!(cand.get(id)||[]).length);const group=(incompatible.length?incompatible:order).slice(0,6).map(id=>ix.scenes.get(id)?.title||id).join(' · ');return {ok:false,message:incompatible.length?'No hay franja individual suficiente para: '+group+'. Comprueba las disponibilidades y descansos.':'No se encontró una combinación simultáneamente viable para: '+group+'. Aunque existan huecos por separado, pueden excluirse entre sí. La búsqueda es limitada; prueba otro orden o menos sesiones.',incompatible};}
+ let placements=solved;
+ if(mode==='idle'){
+  const trial={...r,schedule:obstacles.concat(solved)},opt=globalThis.EntreactosOptimize.optimizeDay(B,trial,dayId,{T:60,lambda:4});if(opt.changed)placements=opt.placements;
+ }
+ const next=clone(draft);next.schedule=obstacles.concat(placements);
+ try{validate(next);const engine=runtime(next),eix=B.index(engine);if(next.schedule.some(p=>!B.validPlacement(engine,p,next.schedule.filter(x=>x!==p),eix)))throw Error('La propuesta tiene conflictos.');}catch(e){return {ok:false,message:e.message};}
+ return {ok:true,state:next,placements,metrics:globalThis.EntreactosOptimize.dayMetrics(B,r,dayId,placements),evaluations,mode};
+}
+function seedGlobal(s){const next=clone(s);for(const unit of next.scenes)if(!next.sessions.some(se=>se.unitId===unit.id))next.sessions.push(newSession(unit));return next;}
+function validSchedule(s){const r=runtime(s),ix=B.index(r);return s.schedule.every(p=>B.validPlacement(r,p,s.schedule.filter(q=>q!==p),ix));}
+return {...B,VERSION,KEY,BACKUP_KEY,promote,migrateState:promote,blank,sample,validateState:validate,parseBackup,backupText,store,newSession,entryOf,unitOf,runtime,validPlacement,problems,plan,modify,availableUnits,dayProposal,seedGlobal,validSchedule,
+ index:s=>B.index(runtime(s)),candidates:(s,sc)=>B.candidates(runtime(s),sc,B.index(runtime(s))),hitsBreak:(s,p)=>B.hitsBreak(runtime(s),p,B.index(runtime(s)))};
+});
+
+
+</script>
+<script>
+/* ENTReACTOS V2.3 CONSOLIDADA — Adaptador exclusivamente de interfaz.
+   Las tres implementaciones de V2.2 anteriores se incluyen SIN MODIFICACIONES.
+   No contiene algoritmos de planificación u optimización alternativos. */
+(function(root){
+'use strict';
+const B=root.EntreactosCore, O=root.EntreactosOptimize, K=root.EntreactosV22;
+const clone=B.clone;
+// El núcleo V2.2 valida fechas internamente pero no exportaba isoDate.
+// La interfaz de Z.ai sí necesita ese validador para los formularios.
+if(typeof B.isoDate!=='function')B.isoDate=s=>typeof s==='string'&&/^\d{4}-\d\d-\d\d$/.test(s)&&!Number.isNaN(new Date(s+'T12:00:00').getTime())&&new Date(s+'T12:00:00').getFullYear()===Number(s.slice(0,4))&&new Date(s+'T12:00:00').getMonth()+1===Number(s.slice(5,7))&&new Date(s+'T12:00:00').getDate()===Number(s.slice(8));
+const clampDur=n=>Math.min(1440,Math.max(1,Math.round(Number(n)||1)));
+function demo(){return K.promote(B.sample());}
+function load(){
+  const primary=localStorage.getItem(K.KEY),backup=localStorage.getItem(K.BACKUP_KEY);
+  if(!primary&&!backup)return null;
+  const faults=[];
+  for(const [kind,raw] of [['proyecto',primary],['respaldo',backup]]){
+    if(!raw)continue;
+    try{return K.promote(JSON.parse(raw));}catch(e){faults.push(kind+': '+e.message);}
+  }
+  // No sobrescribir silenciosamente datos no legibles.
+  recoveryBlocked=true;throw Error('No se pudo abrir el proyecto ni su respaldo. ' + faults.join(' · '));
+}
+let saveError='',recoveryBlocked=false;
+function save(state){
+  if(recoveryBlocked){saveError='Hay datos ilegibles en el almacenamiento. Exporta o importa una copia, o confirma un nuevo proyecto antes de guardar.';return false;}
+  const r=K.store(localStorage).save(state);
+  saveError=r.ok?'':r.error||'Error de almacenamiento';
+  return r.ok;
+}
+function fromJSONText(text){
+  const obj=JSON.parse(text);
+  if(obj?.format==='ENTReACTOS' && [1,2,3,4].includes(obj.version))return K.promote(obj.state);
+  if(obj?.app==='entreactos' && obj.version===4 && obj.data)return K.promote(obj.data);
+  if(obj && [1,2,3,4].includes(obj.version) && !('format' in obj)&&!('app' in obj))return K.promote(obj);
+  throw Error('No se reconoce el formato de copia V1, V2, V2.1, V2.2 o V2.3.');
+}
+function addSession(s,unitId,duration){
+  const u=s.scenes.find(x=>x.id===unitId);
+  if(!u)throw Error('La unidad ya no existe.');
+  const se=K.newSession(u,clampDur(duration));
+  s.sessions.push(se);return se;
+}
+function planGlobal(s){
+  const tmp=K.seedGlobal(s),view=K.runtime(tmp),result=K.plan(tmp,{maxNodes:30000,maxMillis:1400});
+  return {tmp,view,result:{...result,placed:result.stats.placed,total:result.stats.total,capped:result.stats.capped}};
+}
+/* La selección de Z.ai se traduce a sesiones V4 de V2.2, sin alterar el catálogo. */
+function proposeDay(state,dayId,items,threshold=60){
+  const day=state.days.find(d=>d.id===dayId);
+  if(!day)return {day:null,list:[],fixedOnes:[],message:'Jornada inexistente.'};
+  const selected=items.map((it,i)=>({id:it.sessionId||'__entreactos_draft_'+i,unitId:it.unitId,duration:clampDur(it.duration)}));
+  const mapping=new Map(selected.map((se,i)=>[se.id,i]));
+  const fixedOnes=state.schedule.filter(p=>p.dayId===dayId&&p.locked).map(p=>{
+    const se=state.sessions.find(s=>s.id===p.sceneId),u=state.scenes.find(x=>x.id===se?.unitId);
+    return {sid:p.sceneId,start:p.start,startMin:B.minute(p.start),dur:se?.duration||0,type:u?.type||'Escena',title:u?.title||'Sesión'};
+  });
+  const list=[],errors=[];
+  for(const [criterion,mode] of [['chosen','order'],['compact','compact'],['wait','idle']]){
+    let p;
+    try{p=K.dayProposal(state,dayId,selected,mode);}catch(e){errors.push(e.message);continue;}
+    if(!p.ok){errors.push(p.message);continue;}
+    const others=p.placements.filter(x=>!x.locked);
+    const entries=others.map(entry=>{
+      const idx=mapping.get(entry.sceneId),it=items[idx],u=state.scenes.find(x=>x.id===it?.unitId);
+      return {sceneId:entry.sceneId,start:entry.start,dur:it.duration,type:u?.type||'Escena',title:u?.title||'Sesión',itemIndex:idx};
+    });
+    const key=p.placements.map(e=>e.sceneId+':'+e.start).sort().join('|');
+    if(list.some(x=>x.key===key))continue;
+    const wait=O.dayMetrics(B,K.runtime(p.state),dayId,p.placements).totalIdle;
+    list.push({criterion,entries,key,wait,_placements:clone(p.placements),_selected:clone(selected),_sourceSignature:JSON.stringify(state.schedule)});
+  }
+  return {day,list,fixedOnes,message:errors[0]||''};
+}
+function applyProposal(state,dayId,items,prop){
+  if(!prop?._placements||prop._sourceSignature!==JSON.stringify(state.schedule))throw Error('El calendario cambió desde la propuesta. Vuelve a generarla.');
+  const original=clone(state), next=clone(state),idMap=new Map();
+  for(let i=0;i<items.length;i++){
+    const it=items[i],selected=prop._selected[i];
+    if(it.sessionId){
+      const se=next.sessions.find(x=>x.id===it.sessionId);
+      if(!se||se.unitId!==it.unitId)throw Error('La sesión elegida ha cambiado.');
+      se.duration=clampDur(it.duration); idMap.set(selected.id,se.id);
+    }else{
+      const se=addSession(next,it.unitId,it.duration);idMap.set(selected.id,se.id);
+    }
+  }
+  const before=original.schedule.filter(p=>p.dayId!==dayId);
+  const proposed=prop._placements.map(p=>({...p,sceneId:idMap.get(p.sceneId)}));
+  if(proposed.some(p=>!p.sceneId))throw Error('La propuesta tiene una referencia de sesión inexistente.');
+  next.schedule=before.concat(proposed);
+  K.validateState(next);
+  if(!K.validSchedule(next))throw Error('La propuesta produciría incompatibilidades. No se ha aplicado.');
+  for(const p of original.schedule.filter(x=>x.locked&&x.dayId===dayId)){
+    if(!proposed.some(x=>x.sceneId===p.sceneId&&x.start===p.start&&x.dayId===p.dayId&&x.locked))throw Error('La propuesta mueve un ensayo fijado.');
+  }
+  // Sustituir datos en el mismo objeto que utiliza la UI solo tras validar.
+  for(const k of Object.keys(next))state[k]=next[k];
+  return state;
+}
+function discover(state,dayId){
+  const day=state.days.find(d=>d.id===dayId);
+  if(!day)return {day:null,units:[],cast:[]};
+  const units=K.availableUnits(state,dayId).map(r=>({unit:r.unit,status:r.status==='Disponible'?'available':r.status==='Disponibilidad parcial'?'partial':'no',reasons:r.status==='Disponible'?[]:[r.reason],first:r.options.length?B.minute(r.options[0].start):null}));
+  return {day,units,cast:state.actors.map(actor=>({actor,spans:B.merged(state.availability[actor.id]?.[day.date])}))};
+}
+function fmtES(iso){return new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long'}).format(new Date(iso+'T12:00:00')).replace(/^./,x=>x.toUpperCase());}
+/* Solo da formato al texto; los datos proceden del horario real y de V2.2. */
+function callSheet(state,dayId,mode,personId,place,notes){
+  const day=state.days.find(d=>d.id===dayId);if(!day)return '';
+  const view=K.runtime(state),ix=B.index(view),probs=B.problems(view);
+  const entries=state.schedule.filter(p=>p.dayId===dayId).map(p=>{
+    const sc=ix.scenes.get(p.sceneId),who=ix.actors.get(p.sceneId);
+    return {sid:p.sceneId,start:B.minute(p.start),end:B.minute(p.start)+(sc?.duration||0),title:sc?.title||'—',type:sc?.type||'Escena',actors:who?.ids||[]};
+  }).sort((a,b)=>a.start-b.start);
+  const lines=[];
+  if(mode==='all'){
+    lines.push('*CONVOCATORIA · '+state.title+'*',fmtES(day.date)+' · '+day.start+'–'+day.end);
+    if(place)lines.push('Lugar: '+place);
+    lines.push('','*Orden del día*');
+    if(!entries.length)lines.push('Sin sesiones programadas.');
+    for(const e of entries){const names=e.actors.map(id=>state.actors.find(a=>a.id===id)?.name||id).join(' · ');
+      lines.push(B.clock(e.start)+'–'+B.clock(e.end)+' · '+e.title+' ('+e.type+', '+(e.end-e.start)+' min)',names);
+    }
+    if(day.break)lines.push('*Descanso:* '+day.break.start+'–'+B.clock(B.minute(day.break.start)+day.break.duration));
+    const participants=state.actors.filter(a=>entries.some(e=>e.actors.includes(a.id)));
+    if(participants.length)lines.push('','*Convocatorias individuales*');
+    for(const a of participants){const mine=entries.filter(e=>e.actors.includes(a.id));lines.push(a.name+': '+B.clock(mine[0].start)+'–'+B.clock(mine.at(-1).end));}
+  }else{
+    const person=state.actors.find(a=>a.id===personId),mine=entries.filter(e=>e.actors.includes(personId));
+    lines.push('*CONVOCATORIA INDIVIDUAL · '+state.title+'*',fmtES(day.date));
+    if(place)lines.push('Lugar: '+place);
+    lines.push('');
+    if(!person)lines.push('Selecciona un intérprete.');
+    else if(!mine.length)lines.push(person.name+': no tienes ensayos programados para este día.');
+    else{
+      lines.push('*'+person.name+'*');
+      for(const e of mine)lines.push(B.clock(e.start)+'–'+B.clock(e.end)+' · '+e.title+' ('+(e.end-e.start)+' min)');
+      lines.push('','*Convocatoria:* '+B.clock(mine[0].start)+'–'+B.clock(mine.at(-1).end));
+      if(day.break){const a=B.minute(day.break.start),b=a+day.break.duration;if(a<mine.at(-1).end&&b>mine[0].start)lines.push('*Descanso:* '+day.break.start+'–'+B.clock(b));}
+    }
+  }
+  const invalid=entries.filter(e=>(probs[e.sid]||[]).length);
+  if(invalid.length){lines.push('','*ATENCIÓN: CONFLICTOS, NO ENVIAR SIN REVISAR*');for(const e of invalid)for(const p of probs[e.sid])lines.push('· '+e.title+': '+p);}
+  if(notes)lines.push('','*Observaciones:*',notes);
+  return lines.join('\n');
+}
+root.EntreactosUIBridge={...K,acceptReplacement(){recoveryBlocked=false;},KEY:K.KEY,BACKUP:K.BACKUP_KEY,load,save,get lastSaveError(){return saveError;},demo,fromJSONText,exportJSON:K.backupText,
+  toView:K.runtime,addSession,clampDur,planGlobal,proposeDay,applyProposal,discover,callSheet};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+/* ═══ Módulo 4 · Interfaz V2.3 ═══ */
+(function(){
+'use strict';
+const C=window.EntreactosCore,O=window.EntreactosOptimize,V=window.EntreactosUIBridge;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const clock=C.clock,minute=C.minute;
+const TYPE_KEY={'Escena':'scene','Música':'music','Coreografía':'dance'};
+const App={state:null,view:null,ix:null,problems:{},tab:'calendar',dayId:null,prepDayId:null,discDayId:null,availActorId:null,availDayId:null,bkDayId:null,drafts:{},prepProps:null,undoOpt:null,planRes:null,optRes:null,optThreshold:60,catQuery:''};
+let ST=null;
+function setState(s){App.state=s;ST=s;}
+function fmtDur(m){m=Math.round(m);const h=Math.floor(m/60),r=m%60;if(h&&r)return h+' h '+r+' min';if(h)return h+' h';return r+' min';}
+function fmtLong(iso){const d=new Date(iso+'T12:00:00');const s=new Intl.DateTimeFormat('es-ES',{weekday:'long',day:'numeric',month:'long'}).format(d);return s.charAt(0).toUpperCase()+s.slice(1);}
+function fmtMed(iso){return new Intl.DateTimeFormat('es-ES',{weekday:'short',day:'numeric',month:'short'}).format(new Date(iso+'T12:00:00'));}
+function chipType(t){return '<span class="tchip t-'+(TYPE_KEY[t]||'scene')+'">'+esc(t)+'</span>';}
+const ICONS={prev:'<path d="M15 5l-7 7 7 7"/>',next:'<path d="M9 5l7 7-7 7"/>',plus:'<path d="M12 5v14M5 12h14"/>',lock:'<rect x="5.5" y="10.5" width="13" height="9.5" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/>',alert:'<path d="M12 4.5 3 19.5h18z"/><path d="M12 10.5v4"/><path d="M12 16.8v.4"/>',check:'<path d="M4.5 12.8l4.8 4.7L19.5 6.5"/>',tilde:'<path d="M5 13.5c1.5-4 3.5-4 5 0s3.5 4 5 0"/>',cross:'<circle cx="12" cy="12" r="8.5"/><path d="M9 9l6 6M15 9l-6 6"/>',trash:'<path d="M4.5 7h15"/><path d="M9.5 7V5a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 14.5 5v2"/><path d="M6.5 7l1 12.5h9l1-12.5"/>',edit:'<path d="M14.5 5.5l4 4M4 20l1.2-4.3L15.8 5.1a1.7 1.7 0 0 1 2.4 0l.7.7a1.7 1.7 0 0 1 0 2.4L8.3 18.8 4 20z"/>',up:'<path d="M12 19V5"/><path d="M5.5 11.5 12 5l6.5 6.5"/>',down:'<path d="M12 5v14"/><path d="M5.5 12.5 12 19l6.5-6.5"/>',close:'<path d="M6 6l12 12M18 6L6 18"/>'};
+function ic(n){return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">'+ICONS[n]+'</svg>';}
+let toastT=0;
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2800);}
+function persist(msg){
+ const ok=V.save(ST),el=$('#save-state');
+ el.textContent=ok?'Guardado':'Sin guardar';el.className=ok?'save ok':'save bad';
+ if(!ok){toast('No se guardó: '+(V.lastSaveError||'datos no válidos'));return false;}
+ if(!V.validSchedule(ST)){el.textContent='Guardado · revisar conflictos';el.className='save bad';toast('Guardado con incompatibilidades: revisa el calendario.');return true;}
+ if(msg)toast(msg);
+ return true;
+}
+function sortedDays(){return [...ST.days].sort((a,b)=>a.date.localeCompare(b.date)||minute(a.start)-minute(b.start)||a.id.localeCompare(b.id));}
+function dayEntries(dayId){
+ return ST.schedule.filter(p=>p.dayId===dayId).map(p=>{
+  const sc=App.ix.scenes.get(p.sceneId);
+  return {sid:p.sceneId,start:minute(p.start),dur:sc?sc.duration:0,title:sc?sc.title:'(sin sesión)',type:sc?sc.type:'Escena',locked:p.locked,conflicts:App.problems[p.sceneId]||[]};
+ }).sort((a,b)=>a.start-b.start||a.sid.localeCompare(b.sid));
+}
+function titleOfSid(sid){const sc=App.ix.scenes.get(sid);return sc?sc.title:'(sesión)';}
+function unitWho(u){
+ const who=C.owners(ST,u);
+ const names=who.ids.map(id=>ST.actors.find(a=>a.id===id)?.name).filter(Boolean);
+ let s=names.join(', ');
+ if(who.missing.length)s+=(s?' · ':'')+'sin asignar: '+who.missing.join(', ');
+ return s||'sin personajes';
+}
+function dayOptions(sel){return sortedDays().map(d=>'<option value="'+d.id+'"'+(d.id===sel?' selected':'')+'>'+esc(fmtMed(d.date))+' · '+d.start+'–'+d.end+'</option>').join('')||'<option value="">— crea una jornada —</option>';}
+function refresh(){
+ App.view=V.toView(ST);
+ App.ix=C.index(App.view);
+ App.problems=C.problems(App.view);
+ const days=sortedDays();
+ if(!days.find(d=>d.id===App.dayId))App.dayId=days[0]?.id||null;
+ renderTab();
+}
+function switchTab(t){
+ App.tab=t;
+ $$('.ntab').forEach(b=>{const on=b.dataset.tab===t;b.classList.toggle('active',on);b.setAttribute('aria-current',on?'page':'false');});
+ $$('.view').forEach(s=>{s.hidden=(s.id!=='tab-'+t);});
+ renderTab();
+ window.scrollTo({top:0});
+}
+function renderTab(){({calendar:renderCalendar,prepare:renderPrepare,discover:renderDiscover,cast:renderCast,scenes:renderScenes,availability:renderAvailability,days:renderDays,data:renderData})[App.tab]();}
+function openDlg(d){if(typeof d.showModal==='function'){try{d.showModal();return;}catch(e){}}d.setAttribute('open','');d.classList.add('force');}
+function closeDlg(d){if(d.hasAttribute('open')){if(typeof d.close==='function'){try{d.close();return;}catch(e){}}d.removeAttribute('open');d.classList.remove('force');}}
+let cfCb=null;
+function openConfirm(o){
+ $('#cf-title').textContent=o.title;
+ $('#cf-body').innerHTML=o.body||'';
+ const ok=$('#cf-ok');ok.textContent=o.okText||o.ok||'Confirmar';
+ ok.className='btn'+(o.danger?' danger':' primary');
+ cfCb=o.onOk;
+ openDlg($('#dlg-confirm'));
+}
+/* ── Calendario ── */
+function renderCalendar(){
+ $('#undo-opt').hidden=!App.undoOpt;
+ const days=sortedDays();
+ if(!days.length){$('#calbar').hidden=true;$('#cal-tl').innerHTML='';$('#cal-meter').innerHTML='';$('#cal-notices').innerHTML='';$('#cal-list').innerHTML='<div class="empty">Todavía no hay jornadas. <button class="btn link" data-goto="days">Crea la primera jornada</button> para empezar a planificar.</div>';$('#cal-pending').innerHTML='';return;}
+ $('#calbar').hidden=false;
+ const day=days.find(d=>d.id===App.dayId)||days[0];App.dayId=day.id;
+ const di=days.indexOf(day);
+ const es=dayEntries(day.id);
+ const nfix=es.filter(e=>e.locked).length;
+ $('#cal-title').textContent=fmtLong(day.date);
+ $('#cal-sub').textContent=day.start+'–'+day.end+' · '+fmtDur(minute(day.end)-minute(day.start))+(es.length?' · '+es.length+' sesión'+(es.length>1?'es':''):' · sin sesiones')+(nfix?' ('+nfix+' fijada'+(nfix>1?'s':'')+')':'');
+ $('#cal-prev').disabled=di<=0;$('#cal-next').disabled=di>=days.length-1;
+ $('#cal-jump').innerHTML=days.map(d=>'<option value="'+d.id+'"'+(d.id===day.id?' selected':'')+'>'+esc(fmtMed(d.date))+' · '+d.start+'–'+d.end+'</option>').join('');
+ const nBad=es.filter(e=>e.conflicts.length).length;
+ $('#cal-notices').innerHTML=nBad?'<div class="notice error"><span>'+ic('alert')+' <b>'+nBad+' sesión'+(nBad>1?'es':'')+' con incidencias en esta jornada.</b> Se detallan bajo la línea de tiempo.</span></div>':'';
+ $('#cal-meter').innerHTML=meterHTML(day);
+ $('#cal-tl').innerHTML=timelineHTML(day);
+ $('#cal-list').innerHTML=rowsHTML(day);
+ $('#cal-pending').innerHTML=pendingHTML();
+}
+function meterHTML(day){
+ const span=minute(day.end)-minute(day.start);
+ const br=day.break?day.break.duration:0;
+ const work=dayEntries(day.id).reduce((s,e)=>s+e.dur,0);
+ const free=span-br-work;
+ const p=x=>span?Math.max(0,Math.min(100,x/span*100)):0;
+ return '<div class="meter"><div class="meter-bar" role="img" aria-label="Ocupación de la jornada"><span class="m-work" style="width:'+p(work).toFixed(2)+'%"></span><span class="m-brk" style="width:'+p(br).toFixed(2)+'%"></span><span class="m-free" style="width:'+p(Math.max(0,free)).toFixed(2)+'%"></span></div><small>Jornada <b>'+fmtDur(span)+'</b></small><small>Trabajo <b>'+fmtDur(work)+'</b></small><small>Descanso <b>'+fmtDur(br)+'</b></small><small class="'+(free<0?'neg':'')+'">'+(free<0?'Excede en <b>'+fmtDur(-free)+'</b>':'Libre <b>'+fmtDur(free)+'</b>')+'</small></div>';
+}
+/** Línea de tiempo proporcional exacta: left/width en % sobre la duración real. */
+function timelineHTML(day,opts){
+ const entries=((opts&&opts.entries)||dayEntries(day.id)).slice().sort((a,b)=>a.start-b.start);
+ const a=minute(day.start),b=minute(day.end),span=Math.max(1,b-a);
+ const pct=t=>(t-a)/span*100;
+ const lanes=[];
+ for(const e of entries){let li=0;while(li<lanes.length&&lanes[li]>e.start)li++;if(li===lanes.length)lanes.push(0);lanes[li]=e.start+e.dur;e.lane=Math.min(li,3);}
+ const nL=Math.max(1,Math.min(lanes.length,4));
+ const tickStep=span<=720?60:span<=1080?120:180;
+ let ticks='';for(let t=a;t<=b;t+=tickStep)ticks+='<span style="left:'+pct(t).toFixed(3)+'%">'+clock(t)+'</span>';
+ const occ=entries.map(e=>[e.start,e.start+e.dur]);
+ if(day.break)occ.push([minute(day.break.start),minute(day.break.start)+day.break.duration]);
+ occ.sort((x,y)=>x[0]-y[0]);
+ const gaps=[];let cur=a;
+ for(const [s,e] of occ){if(s>cur)gaps.push([cur,s]);cur=Math.max(cur,e);}
+ if(b>cur)gaps.push([cur,b]);
+ let gapHtml='';
+ for(const [s,e] of gaps){const w=pct(e-s);gapHtml+='<div class="tl-gap" style="left:'+pct(s).toFixed(3)+'%;width:'+w.toFixed(3)+'%">'+(w>8?'<span>libre · '+fmtDur(e-s)+'</span>':'')+'</div>';}
+ let brkHtml='';
+ if(day.break){
+  const f=minute(day.break.start),d=day.break.duration;
+  brkHtml='<button type="button" class="tl-break" data-break="'+day.id+'" style="left:'+pct(f).toFixed(3)+'%;width:'+pct(d).toFixed(3)+'%" title="Descanso '+clock(f)+'–'+clock(f+d)+'"><span>Descanso · '+fmtDur(d)+'</span></button>';
+ }
+ let blocks='';
+ for(const e of entries){
+  const wide=pct(e.dur)>13;
+  blocks+='<button type="button" class="tl-b '+(TYPE_KEY[e.type]||'scene')+(e.conflicts&&e.conflicts.length?' bad':'')+(e.locked?' locked':'')+'" data-sid="'+e.sid+'" style="left:'+pct(e.start).toFixed(3)+'%;width:'+pct(e.dur).toFixed(3)+'%;top:'+(e.lane*84)+'px" title="'+esc(e.title)+' · '+clock(e.start)+'–'+clock(e.start+e.dur)+'"><b>'+esc(e.title)+'</b>'+(wide?'<small>'+clock(e.start)+'–'+clock(e.start+e.dur)+' · '+fmtDur(e.dur)+'</small>':'')+'</button>';
+ }
+ return '<div class="tl"><div class="tl-hours">'+ticks+'</div><div class="tl-track" style="height:'+(nL*84+(nL-1)*8)+'px">'+gapHtml+blocks+brkHtml+'</div></div>';
+}
+function miniTimeline(day,blocks){
+ const a=minute(day.start),b=minute(day.end),span=Math.max(1,b-a);
+ const pct=x=>(x-a)/span*100;
+ let h='';
+ if(day.break){const f=minute(day.break.start);h+='<i class="mini-brk" style="left:'+pct(f).toFixed(2)+'%;width:'+pct(day.break.duration).toFixed(2)+'%"></i>';}
+ for(const k of blocks)h+='<i class="mini-b mb-'+(TYPE_KEY[k.type]||'scene')+'" title="'+esc(k.title||'')+'" style="left:'+pct(k.s).toFixed(2)+'%;width:'+pct(k.d).toFixed(2)+'%"></i>';
+ return '<div class="mini-tl">'+h+'<span class="mini-a">'+day.start+'</span><span class="mini-b2">'+day.end+'</span></div>';
+}
+function rowsHTML(day){
+ const es=dayEntries(day.id);
+ if(!es.length)return '<p class="empty">Nada programado en esta jornada. <button class="btn link" data-goto="prepare" data-day="'+day.id+'">Preparar la jornada</button> o pulsa «Generar propuesta».</p>';
+ return es.map(e=>'<div class="crow"><div class="crow-when"><b>'+clock(e.start)+'</b><span>'+fmtDur(e.dur)+'</span></div><div class="crow-main">'+chipType(e.type)+' <b>'+esc(e.title)+'</b>'+(e.locked?'<span class="lockchip">'+ic('lock')+' fijada</span>':'')+(e.conflicts.length?' <span class="badge no">'+ic('alert')+' conflicto</span>':'')+(e.conflicts.length?'<ul class="crow-issues">'+e.conflicts.map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul>':'')+'</div><div class="crow-actions"><button class="btn sm" data-sid="'+e.sid+'">'+ic('edit')+' Editar</button></div></div>').join('');
+}
+function pendingHTML(){
+ const used=new Set(ST.schedule.map(p=>p.sceneId));
+ const pend=ST.sessions.filter(s=>!used.has(s.id)&&!ST.excluded.includes(s.id));
+ const excl=ST.sessions.filter(s=>ST.excluded.includes(s.id));
+ if(!pend.length&&!excl.length)return '';
+ let h='<div class="pendingbox"><p class="mini-h">Sin programar ('+pend.length+')</p>';
+ h+=pend.length?pend.map(s=>'<div class="pend-row"><span>'+esc(titleOfSid(s.id))+' · '+fmtDur(s.duration)+'</span><button class="btn sm" data-sched="'+s.id+'">'+ic('edit')+' Programar</button></div>').join(''):'<p class="helper">Nada pendiente.</p>';
+ if(excl.length){
+  h+='<p class="mini-h">Excluidas de la planificación ('+excl.length+')</p>';
+  h+=excl.map(s=>'<div class="pend-row"><span>'+esc(titleOfSid(s.id))+' · '+fmtDur(s.duration)+'</span><button class="btn sm" data-include="'+s.id+'">Reincorporar</button></div>').join('');
+ }
+ return h+'</div>';
+}
+/* ── Panel contextual de sesión ── */
+let SD=null;
+function openSession(sid,opts={}){
+ SD={sid};
+ const ses=ST.sessions.find(s=>s.id===sid);
+ if(!ses){toast('Sesión no encontrada');return;}
+ const unit=ST.scenes.find(u=>u.id===ses.unitId);
+ const entry=ST.schedule.find(p=>p.sceneId===sid);
+ const rep=ST.sessions.filter(s=>s.unitId===ses.unitId);
+ const days=sortedDays();
+ $('#sd-title').textContent=unit?unit.title:'Sesión';
+ $('#sd-meta').innerHTML=chipType(unit?unit.type:'Escena')+' repetición '+(rep.indexOf(ses)+1)+' de '+rep.length+(entry?(entry.locked?' · programada y fijada':' · programada'):' · sin programar');
+ $('#sd-day').innerHTML=dayOptions(entry?entry.dayId:(opts.day||App.dayId||days[0]?.id));
+ $('#sd-start').value=entry?entry.start:(opts.start||(days[0]?days[0].start:'10:00'));
+ $('#sd-dur').value=ses.duration;
+ $('#sd-lock').checked=entry?entry.locked:true;
+ $('#sd-excl').checked=ST.excluded.includes(sid);
+ $('#sd-del').hidden=!entry;
+ sdPreview();
+ openDlg($('#dlg-session'));
+}
+function sdPreview(){
+ if(!SD)return;
+ const day=ST.days.find(d=>d.id===$('#sd-day').value);
+ const start=$('#sd-start').value,dur=V.clampDur($('#sd-dur').value);
+ const box=$('#sd-preview');
+ if(!day||!Number.isFinite(minute(start))||!dur){box.className='sd-preview bad';box.textContent='Falta jornada, hora o duración válida.';return;}
+ const others=ST.schedule.filter(p=>p.sceneId!==SD.sid).map(p=>({...p}));
+ const vw={...App.view,scenes:App.view.scenes.map(s=>s.id===SD.sid?{...s,duration:dur}:s)};
+ const probs=C.problems(vw,[{sceneId:SD.sid,dayId:day.id,start,locked:false},...others])[SD.sid]||[];
+ if(!probs.length){box.className='sd-preview ok';box.innerHTML=ic('check')+' Sin conflictos con el horario propuesto.';}
+ else{box.className='sd-preview bad';box.innerHTML=ic('alert')+' <b>Revisa:</b><ul>'+probs.map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul>';}
+}
+function sdSave(){
+ if(!SD)return;
+ const day=ST.days.find(d=>d.id===$('#sd-day').value);
+ const start=$('#sd-start').value,dur=V.clampDur($('#sd-dur').value);
+ const lock=$('#sd-lock').checked,excl=$('#sd-excl').checked;
+ if(!day||!Number.isFinite(minute(start))||!dur){toast('Revisa jornada, hora y duración');return;}
+ const next=C.clone(ST),ses=next.sessions.find(s=>s.id===SD.sid);
+ if(!ses){toast('Sesión inexistente');return;}
+ ses.duration=dur;
+ next.schedule=next.schedule.filter(p=>p.sceneId!==SD.sid);
+ next.schedule.push({sceneId:SD.sid,dayId:day.id,start,locked:lock});
+ if(excl&&!next.excluded.includes(SD.sid))next.excluded.push(SD.sid);
+ if(!excl)next.excluded=next.excluded.filter(x=>x!==SD.sid);
+ try{V.validateState(next);if(!V.validSchedule(next))throw Error('Hay una incompatibilidad de disponibilidad, descanso o solapamiento.');}
+ catch(e){toast('No se aplicó: '+e.message);sdPreview();return;}
+ setState(next);App.drafts={};App.prepProps=null;
+ persist('Sesión guardada');closeDlg($('#dlg-session'));refresh();
+}
+
+/* ── Preparar jornada ── */
+function ensureDraft(dayId){
+ if(!dayId)return [];
+ if(!App.drafts[dayId]){
+  App.drafts[dayId]=ST.schedule.filter(p=>p.dayId===dayId).map(p=>{
+   const ses=ST.sessions.find(s=>s.id===p.sceneId);
+   return {sessionId:p.sceneId,unitId:ses?ses.unitId:null,duration:ses?ses.duration:45,locked:p.locked,start:p.start};
+  }).sort((a,b)=>minute(a.start)-minute(b.start));
+ }
+ return App.drafts[dayId];
+}
+function renderPrepare(){
+ const days=sortedDays();
+ if(!App.prepDayId||!days.find(d=>d.id===App.prepDayId))App.prepDayId=(App.dayId&&days.find(d=>d.id===App.dayId)?App.dayId:days[0]?.id)||null;
+ $('#prep-day').innerHTML=days.map(d=>'<option value="'+d.id+'"'+(d.id===App.prepDayId?' selected':'')+'>'+esc(fmtMed(d.date))+' · '+d.start+'–'+d.end+' · '+ST.schedule.filter(p=>p.dayId===d.id).length+' ses.</option>').join('')||'<option value="">— sin jornadas —</option>';
+ if(!days.length){$('#prep-items').innerHTML='<div class="empty">Necesitas una jornada. <button class="btn link" data-goto="days">Crea una</button> o despliega «Crear una jornada nueva».</div>';$('#prep-meter').innerHTML='';$('#prep-props').innerHTML='';renderCatalog();return;}
+ renderCatalog();renderDraft();renderMeterPrep();renderProps();
+}
+function renderCatalog(){
+ const q=norm(App.catQuery);
+ const units=ST.scenes.filter(u=>!q||norm(u.title).includes(q));
+ $('#cat-list').innerHTML=units.length?units.map(u=>'<div class="cat-row"><div class="lrow-main">'+chipType(u.type)+' <b>'+esc(u.title)+'</b><small>'+fmtDur(u.duration)+' · '+esc(unitWho(u))+'</small></div><button class="btn icon" data-add="'+u.id+'" aria-label="Añadir '+esc(u.title)+'" title="Añadir a la jornada">'+ic('plus')+'</button></div>').join(''):(q?'<p class="empty">Ninguna unidad coincide con «'+esc(App.catQuery)+'».</p>':'<p class="empty">Catálogo vacío. <button class="btn link" data-goto="scenes">Crea unidades</button> para empezar.</p>');
+}
+function renderDraft(){
+ const draft=ensureDraft(App.prepDayId);
+ const el=$('#prep-items');
+ if(!draft.length){el.innerHTML='<p class="empty">Nada seleccionado. Elige unidades en el catálogo: la primera vez se reutiliza una sesión pendiente de esa unidad y las repeticiones serán sesiones nuevas.</p>';return;}
+ el.innerHTML=draft.map((it,i)=>{
+  const u=ST.scenes.find(x=>x.id===it.unitId);if(!u)return '';
+  if(it.locked){
+   return '<div class="prow locked"><div class="lrow-main">'+chipType(u.type)+' <b>'+esc(u.title)+'</b><small>'+clock(minute(it.start))+' · '+fmtDur(it.duration)+' · '+esc(unitWho(u))+'</small><span class="lockchip">'+ic('lock')+' fijada · se mantiene en su horario</span></div><div class="prow-ctl"><button class="btn sm" data-sid="'+it.sessionId+'">'+ic('edit')+' Modificar</button></div></div>';
+  }
+  return '<div class="prow"><div class="lrow-main">'+chipType(u.type)+' <b>'+esc(u.title)+'</b><small>'+esc(unitWho(u))+'</small></div><div class="prow-ctl"><div class="stepper"><button type="button" data-dur="'+i+'" data-dv="-15" aria-label="Restar 15 minutos">−15</button><input type="number" data-idx="'+i+'" value="'+it.duration+'" min="1" max="1440" inputmode="numeric" aria-label="Duración en minutos"><button type="button" data-dur="'+i+'" data-dv="15" aria-label="Sumar 15 minutos">+15</button></div>'+(i>0&&!draft[i-1].locked?'<button class="btn icon" data-up="'+i+'" aria-label="Subir en el orden">'+ic('up')+'</button>':'')+(i<draft.length-1&&!draft[i+1].locked?'<button class="btn icon" data-down="'+i+'" aria-label="Bajar en el orden">'+ic('down')+'</button>':'')+'<button class="btn icon" data-rm="'+i+'" aria-label="Quitar de la selección">'+ic('close')+'</button></div></div>';
+ }).join('');
+}
+function renderMeterPrep(){
+ const day=ST.days.find(d=>d.id===App.prepDayId);if(!day){$('#prep-meter').innerHTML='';return;}
+ const draft=ensureDraft(App.prepDayId);
+ const span=minute(day.end)-minute(day.start),br=day.break?day.break.duration:0;
+ const work=draft.reduce((s,i)=>s+i.duration,0),free=span-br-work;
+ const p=x=>span?Math.max(0,Math.min(100,x/span*100)):0;
+ $('#prep-meter').innerHTML='<div class="meter"><div class="meter-bar" role="img" aria-label="Tiempo de la jornada"><span class="m-work" style="width:'+p(work).toFixed(2)+'%"></span><span class="m-brk" style="width:'+p(br).toFixed(2)+'%"></span><span class="m-free" style="width:'+p(Math.max(0,free)).toFixed(2)+'%"></span></div><small>Jornada <b>'+fmtDur(span)+'</b></small><small>Descanso <b>'+fmtDur(br)+'</b></small><small>Trabajo <b>'+fmtDur(work)+'</b></small><small class="'+(free<0?'neg':'')+'">'+(free<0?'Excede en <b>'+fmtDur(-free)+'</b>':'Libre <b>'+fmtDur(free)+'</b>')+'</small></div>';
+}
+function renderProps(){
+ const box=$('#prep-props');
+ const has=ensureDraft(App.prepDayId).length>0;
+ $('#prep-gen').disabled=!has;
+ if(!App.prepProps){box.innerHTML=has?'<p class="helper">Cuando la selección esté lista, pulsa «Generar propuestas de horario» para comparar alternativas. Nada cambia en el calendario hasta que apliques una.</p>':'';return;}
+ box.innerHTML=App.prepProps.list.map((p,idx)=>propCard(App.prepProps,p,idx)).join('');
+}
+function propCard(P,p,idx){
+ const day=P.day;
+ const blocks=P.fixedOnes.map(f=>({s:f.startMin,d:f.dur,type:f.type,locked:true,title:f.title})).concat(p.entries.map(e=>({s:minute(e.start),d:e.dur,type:e.type,locked:false,title:e.title})));
+ const lastEnd=Math.max(0,...blocks.map(b=>b.s+b.d));
+ const crit={chosen:'Orden elegido',compact:'Convocatoria compacta',wait:'Menor espera del reparto'}[p.criterion];
+ return '<div class="prop-card"><div class="prop-head"><b>'+crit+'</b><span>termina '+clock(lastEnd)+' · espera del reparto '+fmtDur(p.wait)+' · '+(p.entries.length+P.fixedOnes.length)+' sesiones</span></div>'+miniTimeline(day,blocks)+'<ol class="prop-ol">'+P.fixedOnes.map(f=>'<li class="fixedli">'+ic('lock')+' '+f.start+' · '+esc(f.title)+' ('+fmtDur(f.dur)+')</li>').join('')+p.entries.map(e=>'<li><b>'+clock(minute(e.start))+'</b> · '+esc(e.title)+' ('+fmtDur(e.dur)+')</li>').join('')+'</ol><div class="actions"><button class="btn primary" data-apply="'+idx+'">Aplicar esta propuesta</button></div></div>';
+}
+function draftAdd(dayId,unitId){
+ if(!dayId){toast('Elige primero una jornada');return;}
+ const d=ensureDraft(dayId);
+ const u=ST.scenes.find(x=>x.id===unitId);if(!u)return;
+ const used=new Set(d.filter(i=>i.sessionId).map(i=>i.sessionId));
+ const pend=ST.sessions.find(s=>s.unitId===unitId&&!ST.schedule.some(p=>p.sceneId===s.id)&&!ST.excluded.includes(s.id)&&!used.has(s.id));
+ d.push({sessionId:pend?pend.id:null,unitId,duration:pend?pend.duration:u.duration,locked:false});
+ App.prepProps=null;
+}
+function draftMove(i,dir){
+ const d=ensureDraft(App.prepDayId);const j=i+dir;
+ if(i<0||j<0||j>=d.length||d[i].locked||d[j].locked)return;
+ const t=d[i];d[i]=d[j];d[j]=t;App.prepProps=null;renderDraft();renderProps();
+}
+function applyPropIdx(idx){
+ const P=App.prepProps;if(!P||!P.list[idx])return;
+ const p=P.list[idx],dayId=P.day.id,items=ensureDraft(dayId);
+ const inv=new Set(items.filter(i=>i.sessionId).map(i=>i.sessionId));
+ const removed=ST.schedule.filter(x=>x.dayId===dayId&&!x.locked&&!inv.has(x.sceneId)).map(x=>titleOfSid(x.sceneId)+' ('+x.start+')');
+ const news=items.filter(i=>!i.sessionId).length;
+ const hours=P.fixedOnes.map(f=>({t:f.startMin,n:f.title,l:true})).concat(p.entries.map(e=>({t:minute(e.start),n:e.title}))).sort((a,b)=>a.t-b.t);
+ openConfirm({title:'Aplicar propuesta · '+fmtLong(P.day.date),body:'<p>Horario resultante:</p><ol>'+hours.map(h=>'<li>'+clock(h.t)+' · '+esc(h.n)+(h.l?' (fijada)':'')+'</li>').join('')+'</ol>'+(removed.length?'<p class="warn-p">Se retirarán del calendario (quedan pendientes): '+removed.map(esc).join(', ')+'.</p>':'')+(news?'<p>Se crearán '+news+' nuevas sesiones o repeticiones.</p>':'')+'<p>El resto de jornadas no se modifica.</p>',okText:'Aplicar propuesta',onOk(){
+   try{V.applyProposal(ST,dayId,items,p);}
+   catch(e){toast('No se aplicó: '+e.message);return;}
+   delete App.drafts[dayId];App.prepProps=null;App.dayId=dayId;
+   persist('Propuesta aplicada');refresh();switchTab('calendar');
+ }});
+}
+
+/* ── ¿Qué podemos ensayar? ── */
+function renderDiscover(){
+ const days=sortedDays();
+ if(!App.discDayId||!days.find(d=>d.id===App.discDayId))App.discDayId=(App.dayId&&days.find(d=>d.id===App.dayId)?App.dayId:days[0]?.id)||null;
+ $('#disc-day').innerHTML=days.map(d=>'<option value="'+d.id+'"'+(d.id===App.discDayId?' selected':'')+'>'+esc(fmtMed(d.date))+' · '+d.start+'–'+d.end+'</option>').join('')||'<option value="">— sin jornadas —</option>';
+ if(!days.length){$('#disc-cast').innerHTML='';$('#disc-units').innerHTML='<div class="empty">Sin jornadas todavía.</div>';return;}
+ const res=V.discover(ST,App.discDayId);
+ $('#disc-cast').innerHTML=res.cast.map(c=>{
+  const label=c.spans.length?'<span class="badge ok">'+ic('check')+c.spans.map(([a,b])=>clock(a)+'–'+clock(b)).join(' · ')+'</span>':'<span class="badge no">'+ic('cross')+' sin disponibilidad</span>';
+  return '<div class="avrow"><b>'+esc(c.actor.name)+'</b>'+stripHTML(res.day,c.spans)+label+'</div>';
+ }).join('')||'<p class="empty">Sin reparto dado de alta.</p>';
+ $('#disc-units').innerHTML=res.units.map(ru=>{
+  const u=ru.unit;
+  const badge=ru.status==='available'?'<span class="badge ok">'+ic('check')+' Disponible</span>':ru.status==='partial'?'<span class="badge part">'+ic('tilde')+' Parcial</span>':'<span class="badge no">'+ic('cross')+' No disponible</span>';
+  const hint=ru.status==='available'&&ru.first!=null?'<small>primer hueco '+clock(ru.first)+'</small>':'';
+  const btn=ru.status!=='no'?'<button class="btn sm" data-prep="'+u.id+'">'+ic('plus')+' A la jornada</button>':'';
+  return '<div class="lrow"><div class="lrow-main">'+chipType(u.type)+' <b>'+esc(u.title)+'</b><small>'+fmtDur(u.duration)+' · '+esc(unitWho(u))+'</small><div class="d-why">'+badge+hint+(ru.reasons.length?'<ul class="crow-issues">'+ru.reasons.map(r=>'<li>'+esc(r)+'</li>').join('')+'</ul>':'')+'</div></div><div class="lrow-actions">'+btn+'</div></div>';
+ }).join('')||'<p class="empty">El catálogo está vacío.</p>';
+}
+function stripHTML(day,spans){
+ const a=minute(day.start),b=minute(day.end),span=Math.max(1,b-a);
+ const cells=(spans||[]).map(([s,e])=>'<i style="left:'+(((s-a)/span*100).toFixed(3))+'%;width:'+(((e-s)/span*100).toFixed(3))+'%"></i>').join('');
+ return '<div class="av-strip">'+cells+'</div>';
+}
+function discoverPropose(){
+ const res=V.discover(ST,App.discDayId);
+ const avail=res.units.filter(u=>u.status==='available');
+ if(!avail.length){toast('Ninguna unidad está disponible completa ese día');return;}
+ const fill=()=>{
+  const d=App.drafts[App.discDayId]=[];
+  for(const ru of avail){
+   const u=ru.unit;
+   const used=new Set(d.filter(i=>i.sessionId).map(i=>i.sessionId));
+   const pend=ST.sessions.find(s=>s.unitId===u.id&&!ST.schedule.some(p=>p.sceneId===s.id)&&!ST.excluded.includes(s.id)&&!used.has(s.id));
+   d.push({sessionId:pend?pend.id:null,unitId:u.id,duration:pend?pend.duration:u.duration,locked:false});
+  }
+  App.prepProps=null;App.prepDayId=App.discDayId;switchTab('prepare');toast('Unidades disponibles añadidas a la jornada');
+ };
+ if(ensureDraft(App.discDayId).length)openConfirm({title:'Reemplazar la selección actual',body:'<p>La jornada en preparación ya tiene sesiones seleccionadas.</p>',okText:'Reemplazar',onOk:fill});
+ else fill();
+}
+/* ── Reparto / Escenas ── */
+function renderCast(){
+ $('#cast-list').innerHTML=ST.actors.map(a=>'<div class="lrow"><div class="lrow-main"><b>'+esc(a.name)+'</b><div class="tags">'+a.roles.map(r=>'<span class="tag">'+esc(r)+'</span>').join('')+'</div></div><div class="lrow-actions"><button class="btn sm" data-edit-actor="'+a.id+'">'+ic('edit')+' Editar</button><button class="btn sm danger" data-del-actor="'+a.id+'">'+ic('trash')+' Eliminar</button></div></div>').join('')||'<p class="empty">Sin reparto. Añade intérpretes para poder asignar personajes a las unidades.</p>';
+}
+function renderScenes(){
+ $('#scene-list').innerHTML=ST.scenes.map(u=>{
+  const sids=ST.sessions.filter(s=>s.unitId===u.id).map(s=>s.id);
+  const prog=sids.filter(id=>ST.schedule.some(p=>p.sceneId===id)).length;
+  return '<div class="lrow"><div class="lrow-main">'+chipType(u.type)+' <b>'+esc(u.title)+'</b><small>'+fmtDur(u.duration)+' · '+esc(unitWho(u))+'</small><small>'+sids.length+' sesión'+(sids.length!==1?'es':'')+(sids.length?' ('+prog+' programada'+(prog!==1?'s':'')+')':'')+'</small></div><div class="lrow-actions"><button class="btn sm" data-edit-scene="'+u.id+'">'+ic('edit')+' Editar</button><button class="btn sm danger" data-del-scene="'+u.id+'">'+ic('trash')+' Eliminar</button></div></div>';
+ }).join('')||'<p class="empty">Catálogo vacío.</p>';
+ const sel=[...($('#scene-form').querySelectorAll('input[name=role]'))].filter(x=>x.checked).map(x=>x.value);
+ $('#roles-choices').innerHTML=rolesChoicesHTML(sel);
+}
+function rolesChoicesHTML(selected){
+ const roles=[...new Set(ST.actors.flatMap(a=>a.roles.map(C.tidy)))].sort((a,b)=>a.localeCompare(b,'es'));
+ return roles.length?roles.map(r=>'<label class="role-check"><input type="checkbox" name="role" value="'+esc(r)+'"'+(selected&&selected.includes(r)?' checked':'')+'> '+esc(r)+'</label>').join(''):'<p class="helper">Crea intérpretes con personajes para poder asignarlos.</p>';
+}
+/* ── Disponibilidad ── */
+function renderAvailability(){
+ const days=sortedDays(),actors=ST.actors;
+ $('#avail-actor').innerHTML=actors.map(a=>'<option value="'+a.id+'"'+(a.id===App.availActorId?' selected':'')+'>'+esc(a.name)+'</option>').join('')||'<option value="">— sin reparto —</option>';
+ $('#avail-day').innerHTML=days.map(d=>'<option value="'+d.id+'"'+(d.id===App.availDayId?' selected':'')+'>'+esc(fmtMed(d.date))+' · '+d.start+'–'+d.end+'</option>').join('')||'<option value="">— sin jornadas —</option>';
+ if(!App.availActorId&&actors.length)App.availActorId=actors[0].id;
+ if(!App.availDayId&&days.length)App.availDayId=App.dayId||days[0].id;
+ const day=ST.days.find(d=>d.id===App.availDayId);
+ const aid=App.availActorId;
+ const spans=aid&&day?C.merged(ST.availability[aid]?.[day.date]):[];
+ $('#avail-list').innerHTML=aid&&day?(spans.length?spans.map((w,i)=>'<div class="lrow"><div class="lrow-main"><b>'+clock(w[0])+' – '+clock(w[1])+'</b></div><button class="btn icon" data-del-span="'+i+'" aria-label="Eliminar franja">'+ic('trash')+'</button></div>').join(''):'<p class="empty">Sin franjas: se considera no disponible ese día.</p>'):'<p class="empty">Elige intérprete y jornada.</p>';
+ $('#avail-map').innerHTML=day&&actors.length?actors.map(a=>{
+  const w=C.merged(ST.availability[a.id]?.[day.date]);
+  return '<div class="avrow"><b>'+esc(a.name)+'</b>'+stripHTML(day,w)+(w.length?'<span class="badge ok">'+ic('check')+' '+w.length+' franja'+(w.length>1?'s':'')+'</span>':'<span class="badge no">'+ic('cross')+' sin disponibilidad</span>')+'</div>';
+ }).join(''):'<p class="empty">Sin datos para mostrar.</p>';
+}
+/* ── Jornadas ── */
+function renderDays(){
+ $('#days-list').innerHTML=sortedDays().map(d=>{
+  const n=ST.schedule.filter(p=>p.dayId===d.id).length;
+  return '<div class="dayrow"><div class="dayrow-head"><div><b>'+esc(fmtLong(d.date))+'</b><small>'+d.start+'–'+d.end+' · '+n+' sesión'+(n!==1?'es':'')+(d.break?' · descanso '+fmtDur(d.break.duration):'')+'</small></div><div class="lrow-actions"><button class="btn sm" data-edit-day="'+d.id+'">'+ic('edit')+' Editar</button><button class="btn sm danger" data-del-day="'+d.id+'">'+ic('trash')+' Eliminar</button></div></div>'+timelineHTML(d)+'</div>';
+ }).join('')||'<p class="empty">Sin jornadas todavía.</p>';
+ const days=sortedDays();
+ if(!App.bkDayId||!days.find(d=>d.id===App.bkDayId))App.bkDayId=days[0]?.id||null;
+ $('#bk-day').innerHTML=dayOptions(App.bkDayId);
+ fillBreakForm(App.bkDayId,'bk');
+ $('#single-room').checked=ST.settings.singleRoom;
+ $('#step').value=String(ST.settings.step);
+}
+function fillBreakForm(dayId,p){
+ const day=ST.days.find(d=>d.id===dayId);
+ $('#'+p+'-day').value=dayId||'';
+ if(!day)return;
+ if(day.break){$('#'+p+'-mode').value=day.break.mode;$('#'+p+'-dur').value=day.break.duration;$('#'+p+'-start').value=day.break.start;}
+ else{$('#'+p+'-mode').value='none';$('#'+p+'-dur').value='30';$('#'+p+'-start').value=clock(Math.floor((minute(day.start)+minute(day.end))/30)*15);}
+}
+function proposeBreakStart(day,duration){
+ const from=minute(day.start),to=minute(day.end),step=ST.settings.step;
+ if(!duration||from+duration>to)return null;
+ const entries=ST.schedule.filter(p=>App.ix.days.get(p.dayId)?.date===day.date).map(p=>{
+   const sc=App.ix.scenes.get(p.sceneId);
+   return {start:minute(p.start),end:minute(p.start)+(sc?.duration||0),locked:p.locked};
+ });
+ let best=null,score=Infinity;
+ for(let t=from;t+duration<=to;t+=step){
+  const hits=entries.filter(p=>C.overlap(t,t+duration,p.start,p.end));
+  if(hits.some(p=>p.locked))continue;
+  const penalty=hits.length*100000+Math.abs(t+duration/2-(from+to)/2);
+  if(penalty<score){best=t;score=penalty;}
+ }
+ return best==null?null:clock(best);
+}
+function doSaveBreak(dayId,mode,dur,startT){
+ const day=ST.days.find(d=>d.id===dayId);if(!day)return;
+ if(mode!=='none'&&(!dur||!Number.isFinite(minute(startT)))){toast('Indica duración y hora del descanso');return;}
+ const from=minute(startT),to=from+dur;
+ if(mode!=='none'&&(from<minute(day.start)||to>minute(day.end))){toast('El descanso no cabe dentro de la jornada');return;}
+ const next=C.clone(ST),nextDay=next.days.find(d=>d.id===dayId);
+ nextDay.break=mode==='none'?null:{mode,start:clock(from),duration:dur};
+ const affected=mode==='none'?[]:ST.schedule.filter(p=>{
+   const d=App.ix.days.get(p.dayId),sc=App.ix.scenes.get(p.sceneId);
+   return d&&sc&&d.date===day.date&&C.overlap(minute(p.start),minute(p.start)+sc.duration,from,to);
+ });
+ if(affected.some(p=>p.locked)){toast('El descanso coincide con sesiones fijadas. Libéralas o elige otra hora.');return;}
+ if(affected.some(p=>p.dayId!==dayId)){toast('El descanso afecta también a otra jornada de esta fecha. Modifícala antes.');return;}
+ if(affected.length){
+  const selected=ST.schedule.filter(p=>p.dayId===dayId).map(p=>{
+   const s=next.sessions.find(x=>x.id===p.sceneId);return {...s};
+  });
+  const res=V.dayProposal(next,dayId,selected,'order');
+  if(!res.ok){toast('No se encontró un horario completo compatible: '+res.message);return;}
+  next.schedule=ST.schedule.filter(p=>p.dayId!==dayId).concat(res.placements);
+ }
+ try{V.validateState(next);if(!V.validSchedule(next))throw Error('El nuevo descanso genera incompatibilidades.');}
+ catch(e){toast('No se guardó: '+e.message);return;}
+ const changed=ST.schedule.filter(p=>p.dayId===dayId).filter(p=>!next.schedule.some(q=>q.sceneId===p.sceneId&&q.start===p.start&&q.dayId===p.dayId));
+ const commit=()=>{setState(next);App.drafts={};App.prepProps=null;persist(mode==='none'?'Descanso eliminado':'Descanso guardado');closeDlg($('#dlg-break'));refresh();};
+ if(changed.length)openConfirm({title:'Reorganizar para introducir el descanso',body:'<p>Se conservarán todas las sesiones, pero cambiará la hora de '+changed.length+' ensayo(s):</p><ul>'+changed.map(p=>'<li>'+esc(titleOfSid(p.sceneId))+' ('+p.start+')</li>').join('')+'</ul><p>¿Aplicar el descanso y los nuevos horarios?</p>',okText:'Guardar y reorganizar',onOk:commit});
+ else commit();
+}
+
+/* ── Archivo ── */
+function renderData(){
+ $('#title-input').value=ST.title;
+ $('#proj-title').value=ST.title;
+ $('#data-counts').textContent=ST.actors.length+' intérpretes · '+ST.scenes.length+' unidades · '+ST.sessions.length+' sesiones · '+ST.days.length+' jornadas · '+ST.schedule.length+' programadas.';
+}
+/* ── Diálogo: plan global ── */
+function openPlanDialog(){
+ if(!ST.scenes.length){toast('No hay unidades en el catálogo');return;}
+ if(!ST.days.length){toast('Crea primero una jornada');return;}
+ const res=V.planGlobal(ST);App.planRes=res;
+ const news=res.tmp.sessions.length-ST.sessions.length;
+ const issues=res.result.unscheduled||[];
+ const pending=issues.filter(x=>!res.tmp.excluded.includes(x.sceneId));
+ const removed=ST.schedule.filter(p=>!p.locked&&!res.result.schedule.some(q=>q.sceneId===p.sceneId));
+ $('#pl-summary').innerHTML='Se colocarían <b>'+res.result.placed+' de '+res.result.total+'</b> sesiones'+(news?' ('+news+' nuevas)':'')+'. Las fijadas permanecen intactas.'+(res.result.capped?' <span class="warn-p">Búsqueda limitada; no garantiza el máximo.</span>':'')+(removed.length?' <span class="warn-p">Atención: '+removed.length+' sesiones actuales perderían su horario.</span>':'')+(pending.length?'<div class="notice error"><strong>No programadas:</strong><ul>'+pending.map(x=>'<li>'+esc(res.view.scenes.find(s=>s.id===x.sceneId)?.title||x.sceneId)+': '+esc(x.reason)+'</li>').join('')+'</ul></div>':'');
+ const probs=C.problems(res.view,res.result.schedule),rix=C.index(res.view);
+ let html='';
+ for(const day of sortedDays()){
+  const es=res.result.schedule.filter(p=>p.dayId===day.id).map(p=>{const sc=rix.scenes.get(p.sceneId);return {sid:p.sceneId,start:minute(p.start),dur:sc?.duration||0,title:sc?.title||'?',type:sc?.type||'Escena',locked:p.locked,conflicts:probs[p.sceneId]||[]};}).sort((a,b)=>a.start-b.start);
+  if(es.length)html+='<h4 class="pl-day">'+esc(fmtLong(day.date))+' <small>'+day.start+'–'+day.end+' · '+es.length+' sesiones</small></h4>'+timelineHTML(day,{entries:es});
+ }
+ $('#pl-body').innerHTML=html||'<p class="empty">La propuesta no coloca sesiones.</p>';
+ openDlg($('#dlg-plan'));
+}
+
+/* ── Diálogo: optimizador ── */
+function openOpt(){
+ if(!App.dayId||!ST.schedule.some(p=>p.dayId===App.dayId)){toast('Esta jornada no tiene sesiones programadas');return;}
+ $('#opt-threshold').value=App.optThreshold;runOpt();openDlg($('#dlg-opt'));
+}
+function runOpt(){
+ const T=Math.max(0,Math.min(480,+$('#opt-threshold').value||60));App.optThreshold=T;
+ App.optRes=O.optimizeDay(C,V.toView(ST),App.dayId,{T,lambda:4});
+ renderOpt(App.optRes);
+}
+function renderOpt(r){
+ const before=r.metricsBefore,after=r.metricsAfter;
+ if(!before||!after){$('#opt-note').textContent=r.reason||'No se pudo optimizar';$('#opt-apply').disabled=true;return;}
+ $('#opt-stats').innerHTML='<div class="opt-stat">Espera de la jornada ahora<b>'+fmtDur(before.totalIdle)+'</b></div><div class="opt-stat">Espera propuesta<b>'+fmtDur(after.totalIdle)+'</b></div><div class="opt-stat">Eficiencia ahora → propuesta<b>'+(before.density*100).toFixed(1)+'% → '+(after.density*100).toFixed(1)+'%</b></div><div class="opt-stat">Mayor espera individual<b>'+fmtDur(before.maxIdle)+' → '+fmtDur(after.maxIdle)+'</b></div>';
+ const bm=new Map(before.actors.map(a=>[a.id,a])),am=new Map(after.actors.map(a=>[a.id,a]));
+ let rows='';
+ for(const aid of [...new Set([...bm.keys(),...am.keys()])]){
+  const b=bm.get(aid)||{first:null,last:null,idle:0,work:0},a=am.get(aid)||{first:null,last:null,idle:0,work:0},d=a.idle-b.idle;
+  rows+='<tr><td>'+esc(a.name||b.name||aid)+'</td><td>'+(b.first!=null?clock(b.first)+'–'+clock(b.last):'—')+'</td><td>'+(a.first!=null?clock(a.first)+'–'+clock(a.last):'—')+'</td><td>'+fmtDur(a.work)+'</td><td>'+fmtDur(b.idle)+'</td><td>'+fmtDur(a.idle)+'</td><td class="'+(d<0?'pos':d>0?'neg':'')+'">'+(d?(d>0?'+':'−')+fmtDur(Math.abs(d)):'=')+'</td></tr>';
+ }
+ $('#opt-table').innerHTML='<thead><tr><th>Intérprete</th><th>Actual</th><th>Propuesta</th><th>Ensayo efectivo</th><th>Espera actual</th><th>Propuesta</th><th>Δ</th></tr></thead><tbody>'+(rows||'<tr><td colspan="7">Nadie convocado.</td></tr>')+'</tbody>';
+ $('#opt-apply').disabled=!r.changed;
+ $('#opt-note').innerHTML='<p class="helper">'+esc(r.changed?'Optimización válida para '+fmtMed(ST.days.find(d=>d.id===r.dayId).date)+'. No cambia otras jornadas.':r.reason||'No se ha encontrado una mejora válida.')+'</p>';
+}
+
+/* ── Diálogo: convocatoria ── */
+function openCall(dayId){
+ if(!dayId||!ST.days.find(d=>d.id===dayId)){toast('Selecciona una jornada');return;}
+ $('#call-day').innerHTML=dayOptions(dayId);
+ $('#call-person').innerHTML=ST.actors.map(a=>'<option value="'+a.id+'">'+esc(a.name)+'</option>').join('')||'<option value="">— sin reparto —</option>';
+ $('#call-place').value=ST.meta?.place||'';
+ $('#call-notes').value=ST.meta?.notes||'';
+ callRefresh();
+ openDlg($('#dlg-call'));
+}
+function callRefresh(){
+ const text=V.callSheet(ST,$('#call-day').value,$('#call-mode').value,$('#call-person').value,$('#call-place').value.trim(),$('#call-notes').value.trim());
+ $('#call-preview').value=text;
+ const day=ST.days.find(d=>d.id===$('#call-day').value);
+ const n=day?dayEntries(day.id).filter(e=>e.conflicts.length).length:0;
+ const w=$('#call-warning');
+ if(n){w.hidden=false;w.innerHTML=ic('alert')+' Esta jornada tiene '+n+' sesión'+(n>1?'es':'')+' con incidencias. Revisa antes de enviar.';}
+ else w.hidden=true;
+}
+async function copyText(t){
+ try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(t);return true;}}catch(e){}
+ try{const ta=$('#call-preview');ta.focus();ta.select();return document.execCommand('copy');}catch(e){return false;}
+}
+/* ── Delegación de eventos ── */
+document.addEventListener('click',ev=>{
+ const q=s=>ev.target.closest(s);let el;
+ if(el=q('[data-sid]')){if(!el.closest('dialog'))openSession(el.dataset.sid);return;}
+ if(el=q('[data-break]')){openBreakDialog(el.dataset.break);return;}
+ if(el=q('[data-add]')){draftAdd(App.prepDayId,el.dataset.add);toast('Añadida a la selección');renderDraft();renderMeterPrep();renderProps();return;}
+ if(el=q('[data-rm]')){const d=ensureDraft(App.prepDayId);const i=+el.dataset.rm;if(d[i]){d.splice(i,1);App.prepProps=null;renderDraft();renderMeterPrep();renderProps();}return;}
+ if(el=q('[data-up]')){draftMove(+el.dataset.up,-1);return;}
+ if(el=q('[data-down]')){draftMove(+el.dataset.down,1);return;}
+ if(el=q('[data-dur]')){const d=ensureDraft(App.prepDayId);const i=+el.dataset.dur;if(d[i]&&!d[i].locked){d[i].duration=V.clampDur(d[i].duration+Number(el.dataset.dv));App.prepProps=null;renderDraft();renderMeterPrep();renderProps();}return;}
+ if(el=q('[data-apply]')){applyPropIdx(+el.dataset.apply);return;}
+ if(el=q('[data-prep]')){draftAdd(App.discDayId,el.dataset.prep);toast('Añadida a la jornada en preparación');return;}
+ if(el=q('[data-sched]')){openSession(el.dataset.sched,{fresh:true,day:App.dayId});return;}
+ if(el=q('[data-include]')){ST.excluded=ST.excluded.filter(x=>x!==el.dataset.include);persist('Sesión reincorporada a la planificación');refresh();return;}
+ if(el=q('[data-goto]')){const t=el.dataset.goto;if(t==='prepare'&&el.dataset.day)App.prepDayId=el.dataset.day;switchTab(t);return;}
+ if(el=q('[data-edit-actor]')){editActor(el.dataset.editActor);return;}
+ if(el=q('[data-del-actor]')){delActor(el.dataset.delActor);return;}
+ if(el=q('[data-edit-scene]')){editScene(el.dataset.editScene);return;}
+ if(el=q('[data-del-scene]')){delScene(el.dataset.delScene);return;}
+ if(el=q('[data-edit-day]')){editDay(el.dataset.editDay);return;}
+ if(el=q('[data-del-day]')){delDay(el.dataset.delDay);return;}
+ if(el=q('[data-del-span]')){const day=ST.days.find(d=>d.id===App.availDayId);if(App.availActorId&&day){const arr=ST.availability[App.availActorId]?.[day.date];if(arr){arr.splice(+el.dataset.delSpan,1);persist('Franja eliminada');refresh();}}return;}
+});
+document.addEventListener('change',ev=>{
+ const el=ev.target;
+ if(el.id==='cal-jump'){App.dayId=el.value;renderCalendar();return;}
+ if(el.id==='prep-day'){App.prepDayId=el.value;App.prepProps=null;renderPrepare();return;}
+ if(el.id==='disc-day'){App.discDayId=el.value;renderDiscover();return;}
+ if(el.id==='avail-actor'){App.availActorId=el.value;renderAvailability();return;}
+ if(el.id==='avail-day'){App.availDayId=el.value;renderAvailability();return;}
+ if(el.id==='bk-day'){App.bkDayId=el.value;fillBreakForm(el.value,'bk');return;}
+ if(el.id==='bk2-day'){fillBreakForm(el.value,'bk2');return;}
+ if(el.id==='sd-day'||el.id==='sd-start'||el.id==='sd-dur'){sdPreview();return;}
+ if(el.closest&&el.closest('#dlg-call')){callRefresh();return;}
+ if(el.closest&&el.closest('#prep-items')&&el.matches('input[type=number]')){
+  const d=ensureDraft(App.prepDayId);const i=+el.dataset.idx;
+  if(d[i]&&!d[i].locked){d[i].duration=V.clampDur(el.value);el.value=d[i].duration;App.prepProps=null;renderMeterPrep();renderProps();}
+  return;
+ }
+});
+document.addEventListener('input',ev=>{if(ev.target.id==='sd-dur')sdPreview();});
+/* ── Acciones de borrado / edición ── */
+function editActor(id){
+ const a=ST.actors.find(x=>x.id===id);if(!a)return;
+ const f=$('#actor-form');
+ f.elements.namedItem('id').value=id;f.elements.namedItem('name').value=a.name;f.elements.namedItem('roles').value=a.roles.join(', ');
+ $('#actor-form-title').textContent='Editar intérprete';
+ $('#actor-cancel').hidden=false;
+ f.elements.namedItem('name').focus();
+}
+function delActor(id){
+ const a=ST.actors.find(x=>x.id===id);if(!a)return;
+ openConfirm({title:'Eliminar a '+a.name,body:'<p>Sus personajes quedarán sin intérprete ('+a.roles.map(esc).join(', ')+') y se perderán sus franjas de disponibilidad.</p>',okText:'Eliminar',danger:true,onOk(){
+  ST.actors=ST.actors.filter(x=>x.id!==id);
+  delete ST.availability[id];
+  App.availActorId=null;App.drafts={};
+  persist('Intérprete eliminado');refresh();
+ }});
+}
+function editScene(id){
+ const u=ST.scenes.find(x=>x.id===id);if(!u)return;
+ const f=$('#scene-form');
+ f.elements.namedItem('id').value=id;f.elements.namedItem('title').value=u.title;f.elements.namedItem('duration').value=u.duration;f.elements.namedItem('type').value=u.type;
+ $('#roles-choices').innerHTML=rolesChoicesHTML(u.roles);
+ $('#scene-form-title').textContent='Editar unidad';
+ $('#scene-cancel').hidden=false;
+ f.elements.namedItem('title').focus();
+}
+function delScene(id){
+ const u=ST.scenes.find(x=>x.id===id);if(!u)return;
+ const sids=ST.sessions.filter(s=>s.unitId===id).map(s=>s.id);
+ const prog=sids.filter(x=>ST.schedule.some(p=>p.sceneId===x)).length;
+ openConfirm({title:'Eliminar «'+u.title+'»',body:'<p>Se eliminarán sus '+sids.length+' sesión'+(sids.length!==1?'es':'')+(prog?' ('+prog+' programada'+(prog!==1?'s':'')+', que se retirarán del calendario)':'')+' y sus exclusiones. La acción no se puede deshacer dentro de la aplicación; exporta antes si quieres conservarla.</p>',okText:'Eliminar',danger:true,onOk(){
+  ST.scenes=ST.scenes.filter(x=>x.id!==id);
+  ST.sessions=ST.sessions.filter(s=>s.unitId!==id);
+  ST.schedule=ST.schedule.filter(p=>!sids.includes(p.sceneId));
+  ST.excluded=ST.excluded.filter(x=>!sids.includes(x));
+  App.drafts={};App.prepProps=null;
+  persist('Unidad eliminada');refresh();
+ }});
+}
+function editDay(id){
+ const d=ST.days.find(x=>x.id===id);if(!d)return;
+ const f=$('#day-form');
+ f.elements.namedItem('id').value=id;f.elements.namedItem('date').value=d.date;f.elements.namedItem('start').value=d.start;f.elements.namedItem('end').value=d.end;
+ $('#day-form-title').textContent='Editar jornada';
+ $('#day-cancel').hidden=false;
+ f.elements.namedItem('date').focus();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function delDay(id){
+ const d=ST.days.find(x=>x.id===id);if(!d)return;
+ const n=ST.schedule.filter(p=>p.dayId===id).length;
+ openConfirm({title:'Eliminar la jornada de '+fmtMed(d.date),body:'<p>Se retirarán del calendario sus '+n+' sesión'+(n!==1?'es':'')+' (quedarán pendientes). El descanso asociado desaparece.</p>',okText:'Eliminar',danger:true,onOk(){
+  ST.days=ST.days.filter(x=>x.id!==id);
+  ST.schedule=ST.schedule.filter(p=>p.dayId!==id);
+  App.drafts={};App.prepProps=null;
+  persist('Jornada eliminada');refresh();
+ }});
+}
+function openBreakDialog(dayId){
+ $('#bk2-day').innerHTML=dayOptions(dayId);
+ fillBreakForm(dayId,'bk2');
+ openDlg($('#dlg-break'));
+}
+/* ── Enlaces estáticos ── */
+function bindStatic(){
+ $$('.ntab').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+ $('#cal-prev').onclick=()=>{const ds=sortedDays();const i=ds.findIndex(d=>d.id===App.dayId);if(i>0){App.dayId=ds[i-1].id;renderCalendar();}};
+ $('#cal-next').onclick=()=>{const ds=sortedDays();const i=ds.findIndex(d=>d.id===App.dayId);if(i<ds.length-1){App.dayId=ds[i+1].id;renderCalendar();}};
+ $('#cal-share').onclick=()=>openCall(App.dayId);
+ $('#cal-opt').onclick=openOpt;
+ $('#cal-gen').onclick=openPlanDialog;
+ $('#cal-print').onclick=()=>window.print();
+ $('#undo-opt').onclick=()=>{if(!App.undoOpt)return;openConfirm({title:'Deshacer la optimización',body:'<p>Se recuperará el horario anterior a la última optimización aplicada.</p>',okText:'Deshacer',onOk(){ST.schedule=App.undoOpt;App.undoOpt=null;App.drafts={};persist('Optimización deshecha');refresh();}});};
+ $('#cat-search').addEventListener('input',e=>{App.catQuery=e.target.value;renderCatalog();});
+ $('#prep-gen').onclick=()=>{
+  const items=ensureDraft(App.prepDayId);
+  if(!items.length){toast('Añade alguna sesión a la jornada');return;}
+  const res=V.proposeDay(ST,App.prepDayId,items,60);
+  if(!res.list.length){
+   App.prepProps=null;
+   $('#prep-props').innerHTML='<div class="notice error"><span>'+ic('alert')+' No se encontró un horario completo para toda la selección. Prueba a reducir duraciones, repasar disponibilidades o el descanso de la jornada.</span></div>';
+   return;
+  }
+  App.prepProps=res;renderProps();
+ };
+ $('#prep-create').onclick=()=>{
+  const date=$('#prep-new-date').value,start=$('#prep-new-start').value,end=$('#prep-new-end').value;
+  if(!C.isoDate(date)||!Number.isFinite(minute(start))||!Number.isFinite(minute(end))||minute(end)<=minute(start)){toast('Revisa fecha y horario');return;}
+  const d={id:C.ident(),date,start,end,break:null};
+  ST.days.push(d);
+  if($('#prep-new-all').checked)for(const a of ST.actors){
+   if(!ST.availability[a.id])ST.availability[a.id]={};
+   if(!ST.availability[a.id][date])ST.availability[a.id][date]=[{start,end}];
+  }
+  App.prepDayId=d.id;persist('Jornada creada');refresh();
+ };
+ $('#disc-propose').onclick=discoverPropose;
+ $('#proj-title').addEventListener('change',e=>{const t=C.tidy(e.target.value);if(t){ST.title=t;persist('Título guardado');renderData();}});
+ $('#actor-form').onsubmit=e=>{
+  e.preventDefault();
+  const f=e.target,fd=new FormData(f);
+  const name=C.tidy(String(fd.get('name')||''));
+  const roles=[...new Set(String(fd.get('roles')||'').split(',').map(C.tidy).filter(Boolean))];
+  if(!name||!roles.length){toast('Indica el nombre y al menos un personaje');return;}
+  const id=String(fd.get('id')||'');
+  if(id){const a=ST.actors.find(x=>x.id===id);if(a){a.name=name;a.roles=roles;}}
+  else ST.actors.push({id:C.ident(),name,roles});
+  persist('Intérprete guardado');f.reset();f.elements.namedItem('id').value='';$('#actor-form-title').textContent='Añadir intérprete';$('#actor-cancel').hidden=true;refresh();
+ };
+ $('#actor-cancel').onclick=()=>{const f=$('#actor-form');f.reset();f.elements.namedItem('id').value='';$('#actor-form-title').textContent='Añadir intérprete';$('#actor-cancel').hidden=true;};
+ $('#scene-form').onsubmit=e=>{
+  e.preventDefault();
+  const f=e.target,fd=new FormData(f);
+  const title=C.tidy(String(fd.get('title')||''));
+  const dur=V.clampDur(fd.get('duration'));
+  const type=String(fd.get('type')||'Escena');
+  const roles=[...new Set(fd.getAll('role').map(r=>C.tidy(String(r))).filter(Boolean))];
+  if(!title){toast('Ponle título a la unidad');return;}
+  const id=String(fd.get('id')||'');
+  if(id){const u=ST.scenes.find(x=>x.id===id);if(u){u.title=title;u.type=type;u.duration=dur;u.roles=roles;}}
+  else ST.scenes.push({id:C.ident(),title,type,duration:dur,roles});
+  persist('Unidad guardada');f.reset();f.elements.namedItem('id').value='';f.elements.namedItem('duration').value=60;$('#scene-form-title').textContent='Añadir unidad';$('#scene-cancel').hidden=true;$('#roles-choices').innerHTML=rolesChoicesHTML([]);refresh();
+ };
+ $('#scene-cancel').onclick=()=>{const f=$('#scene-form');f.reset();f.elements.namedItem('id').value='';f.elements.namedItem('duration').value=60;$('#scene-form-title').textContent='Añadir unidad';$('#scene-cancel').hidden=true;$('#roles-choices').innerHTML=rolesChoicesHTML([]);};
+ $('#day-form').onsubmit=e=>{
+ e.preventDefault();
+ const f=e.target,fd=new FormData(f);
+ const date=String(fd.get('date')||''),start=String(fd.get('start')||''),end=String(fd.get('end')||''),id=String(fd.get('id')||'');
+ if(!C.isoDate(date)||!Number.isFinite(minute(start))||!Number.isFinite(minute(end))||minute(end)<=minute(start)){
+  toast('Revisa la fecha y el horario de la jornada');return;
+ }
+ const next=C.clone(ST),reset=()=>{
+  f.reset();f.elements.namedItem('id').value='';f.elements.namedItem('start').value='10:00';f.elements.namedItem('end').value='14:00';
+  $('#day-form-title').textContent='Añadir jornada';$('#day-cancel').hidden=true;
+ };
+ if(!id){
+  next.days.push({id:C.ident(),date,start,end,break:null});
+  try{V.validateState(next);}catch(err){toast(err.message);return;}
+  setState(next);persist('Jornada creada');reset();refresh();return;
+ }
+ const old=ST.days.find(d=>d.id===id),d=next.days.find(d=>d.id===id);
+ if(!old||!d)return;
+ const from=minute(start),to=minute(end);
+ const affected=ST.schedule.filter(p=>{
+  if(p.dayId!==id)return false;
+  const sc=App.ix.scenes.get(p.sceneId),t=minute(p.start);
+  return t<from||t+(sc?.duration||0)>to;
+ });
+ if(affected.some(p=>p.locked)){
+  toast('Las nuevas horas excluirían sesiones fijadas. Libéralas antes de cambiar la jornada.');return;
+ }
+ const oldBreak=d.break;
+ const removeBreak=!!(oldBreak&&(minute(oldBreak.start)<from||minute(oldBreak.start)+oldBreak.duration>to));
+ d.date=date;d.start=start;d.end=end;if(removeBreak)d.break=null;
+ next.schedule=next.schedule.filter(p=>!affected.some(q=>q.sceneId===p.sceneId));
+ try{V.validateState(next);if(!V.validSchedule(next))throw Error('Las sesiones restantes quedarían en conflicto. Comprueba disponibilidades, descansos y fechas.');}
+ catch(err){toast('No se actualizó: '+err.message);return;}
+ const commit=()=>{setState(next);App.drafts={};App.prepProps=null;persist('Jornada actualizada');reset();refresh();};
+ if(affected.length||removeBreak){
+  openConfirm({title:'Actualizar jornada',body:'<p>Las siguientes sesiones dejarán de tener horario:</p><ul>'+affected.map(p=>'<li>'+esc(titleOfSid(p.sceneId))+' ('+p.start+')</li>').join('')+(removeBreak?'<li>El descanso quedaría fuera de la jornada y se eliminará.</li>':'')+'</ul>',okText:'Actualizar jornada',onOk:commit});
+ }else commit();
+};
+
+$('#day-cancel').onclick=()=>{const f=$('#day-form');f.reset();f.elements.namedItem('id').value='';f.elements.namedItem('start').value='10:00';f.elements.namedItem('end').value='14:00';$('#day-form-title').textContent='Añadir jornada';$('#day-cancel').hidden=true;};
+ $('#availability-form').onsubmit=e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const s=String(fd.get('start')||''),en=String(fd.get('end')||'');
+  if(!Number.isFinite(minute(s))||!Number.isFinite(minute(en))||minute(en)<=minute(s)){toast('La franja debe terminar más tarde de lo que empieza');return;}
+  const day=ST.days.find(d=>d.id===App.availDayId);
+  if(!App.availActorId||!day){toast('Elige intérprete y jornada');return;}
+  if(!ST.availability[App.availActorId])ST.availability[App.availActorId]={};
+  if(!ST.availability[App.availActorId][day.date])ST.availability[App.availActorId][day.date]=[];
+  ST.availability[App.availActorId][day.date].push({start:s,end:en});
+  persist('Franja añadida');e.target.reset();e.target.start.value='10:00';e.target.end.value='14:00';refresh();
+ };
+ const bindBreak=p=>{
+  $('#'+p+'-propose').onclick=()=>{
+   const day=ST.days.find(d=>d.id===$('#'+p+'-day').value);if(!day)return;
+   const t=proposeBreakStart(day,V.clampDur($('#'+p+'-dur').value));
+   if(t)$('#'+p+'-start').value=t;else toast('Ese descanso no cabe en la jornada');
+  };
+  $('#'+p+'-save').onclick=()=>{
+   const dayId=$('#'+p+'-day').value;
+   doSaveBreak(dayId,$('#'+p+'-mode').value,V.clampDur($('#'+p+'-dur').value),$('#'+p+'-start').value);
+  };
+  $('#'+p+'-clear').onclick=()=>{doSaveBreak($('#'+p+'-day').value,'none',0,'');};
+ };
+ bindBreak('bk');bindBreak('bk2');
+ $('#bk2-close').onclick=()=>closeDlg($('#dlg-break'));
+ $('#single-room').addEventListener('change',e=>{ST.settings.singleRoom=e.target.checked;persist();});
+ $('#step').addEventListener('change',e=>{ST.settings.step=+e.target.value;persist();});
+ $('#save-title').onclick=()=>{const t=C.tidy($('#title-input').value);if(t){ST.title=t;persist('Título guardado');renderData();}};
+ $('#title-input').addEventListener('change',()=>{const t=C.tidy($('#title-input').value);if(t){ST.title=t;persist();}});
+ $('#export').onclick=()=>{
+  const blob=new Blob([V.exportJSON(ST)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='entreactos-'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+  toast('Copia JSON descargada');
+ };
+ $('#import').onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+   let st=null;
+   try{st=V.fromJSONText(String(r.result));}
+   catch(err){toast('Importación rechazada: '+err.message);return;}
+   openConfirm({title:'Reemplazar el proyecto actual',body:'<p>«'+esc(st.title)+'» · '+st.actors.length+' intérpretes, '+st.scenes.length+' unidades, '+st.days.length+' jornadas, '+st.sessions.length+' sesiones.</p><p>El proyecto actual se conservará en el respaldo local de este dispositivo.</p>',okText:'Importar y reemplazar',onOk(){
+    V.acceptReplacement();setState(st);App.drafts={};App.undoOpt=null;App.prepProps=null;App.dayId=st.days[0]?.id||null;App.prepDayId=null;App.discDayId=null;App.availActorId=null;App.availDayId=null;App.bkDayId=null;
+    persist('Proyecto importado');refresh();
+   }});
+  };
+  r.readAsText(f);
+  e.target.value='';
+ };
+ $('#new-blank').onclick=()=>openConfirm({title:'Crear proyecto vacío',body:'<p>Se sustituirá el proyecto actual (conservado en el respaldo local de este dispositivo). Descarga antes una copia JSON si la necesitas.</p>',okText:'Crear vacío',danger:true,onOk(){V.acceptReplacement();setState(V.blank());resetApp();persist('Proyecto vacío creado');refresh();}});
+ $('#new-demo').onclick=()=>openConfirm({title:'Restaurar la demostración',body:'<p>Se sustituirá el proyecto actual por los datos provisionales de 27 Generation Tour.</p>',okText:'Restaurar demo',danger:true,onOk(){V.acceptReplacement();setState(V.demo());resetApp();persist('Demostración restaurada');refresh();}});
+ /* diálogos */
+ $('#cf-ok').onclick=()=>{closeDlg($('#dlg-confirm'));const f=cfCb;cfCb=null;if(f)f();};
+ $('#cf-no').onclick=()=>{closeDlg($('#dlg-confirm'));cfCb=null;};
+ $('#sd-close').onclick=()=>closeDlg($('#dlg-session'));
+ $('#sd-save').onclick=sdSave;
+ $('#sd-del').onclick=()=>{if(!SD)return;openConfirm({title:'Retirar sesión del calendario',body:'La sesión seguirá en el proyecto, pendiente de programar.',okText:'Retirar',onOk(){ST.schedule=ST.schedule.filter(p=>p.sceneId!==SD.sid);App.drafts={};persist('Sesión retirada del calendario');closeDlg($('#dlg-session'));refresh();}});};
+ $('#sd-dup').onclick=()=>{
+  if(!SD)return;
+  const ses=ST.sessions.find(s=>s.id===SD.sid);if(!ses)return;
+  const dayId=$('#sd-day').value,start=$('#sd-start').value;
+  if(!dayId||!Number.isFinite(minute(start))){toast('Elige jornada y hora');return;}
+  const ns=V.addSession(ST,ses.unitId,V.clampDur($('#sd-dur').value));
+  /* La copia nace pendiente: el usuario elegirá dónde ensayarla. */
+  persist('Sesión duplicada, pendiente de programar');closeDlg($('#dlg-session'));refresh();openSession(ns.id);
+ };
+ $('#sd-kill').onclick=()=>{
+  if(!SD)return;
+  openConfirm({title:'Eliminar esta sesión',body:'<p>Se quitará la sesión (y su asignación si la tiene) del proyecto. La unidad del catálogo no se toca.</p>',okText:'Eliminar sesión',danger:true,onOk(){
+   ST.sessions=ST.sessions.filter(s=>s.id!==SD.sid);
+   ST.schedule=ST.schedule.filter(p=>p.sceneId!==SD.sid);
+   ST.excluded=ST.excluded.filter(x=>x!==SD.sid);
+   App.drafts={};App.prepProps=null;
+   persist('Sesión eliminada');closeDlg($('#dlg-session'));refresh();
+  }});
+ };
+ $('#dlg-session').addEventListener('click',e=>{
+  const b=e.target.closest('[data-sdstep]');
+  if(!b)return;
+  const inp=$('#sd-dur');
+  inp.value=V.clampDur((+inp.value||0)+Number(b.dataset.sdstep));
+  sdPreview();
+ });
+ $('#cl-close').onclick=()=>closeDlg($('#dlg-call'));
+ $('#cl-close2').onclick=()=>closeDlg($('#dlg-call'));
+ $('#cl-copy').onclick=async()=>{
+  ST.meta={place:$('#call-place').value.trim(),notes:$('#call-notes').value.trim()};
+  persist();
+  const ok=await copyText($('#call-preview').value);
+  toast(ok?'Convocatoria copiada':'No se pudo copiar automáticamente: selecciona el texto y cópialo a mano');
+ };
+ $('#pl-close').onclick=()=>closeDlg($('#dlg-plan'));
+ $('#pl-discard').onclick=()=>closeDlg($('#dlg-plan'));
+ $('#pl-apply').onclick=()=>{
+ const res=App.planRes;if(!res)return;
+ const removed=ST.schedule.filter(p=>!p.locked&&!res.result.schedule.some(q=>q.sceneId===p.sceneId));
+ const next=C.clone(res.tmp);next.schedule=res.result.schedule.map(p=>({...p}));
+ try{V.validateState(next);if(!V.validSchedule(next))throw Error('La propuesta contiene incompatibilidades.');}
+ catch(e){toast('No se aplicó: '+e.message);return;}
+ const fixed=ST.schedule.filter(p=>p.locked);
+ if(fixed.some(p=>!next.schedule.some(q=>q.sceneId===p.sceneId&&q.dayId===p.dayId&&q.start===p.start&&q.locked))){toast('La propuesta altera una sesión fijada.');return;}
+ openConfirm({title:'Aplicar la propuesta global',body:'<p>Se reorganizarán las sesiones no fijadas.</p>'+(removed.length?'<div class="notice error">'+removed.length+' sesiones previamente programadas quedarán pendientes: '+removed.map(x=>esc(titleOfSid(x.sceneId))).join(', ')+'.</div>':'')+'<p>Las sesiones fijadas mantienen su horario.</p>',okText:'Aplicar',onOk(){
+   setState(next);App.drafts={};App.prepProps=null;App.planRes=null;
+   persist('Plan global aplicado');closeDlg($('#dlg-plan'));refresh();
+ }});
+};
+
+$('#opt-close').onclick=()=>closeDlg($('#dlg-opt'));
+ $('#opt-discard').onclick=()=>closeDlg($('#dlg-opt'));
+ $('#opt-recalculate').onclick=runOpt;
+ $('#opt-apply').onclick=()=>{
+ const r=App.optRes;if(!r||!r.changed)return;
+ const next=C.clone(ST),before=next.schedule.filter(p=>p.dayId!==r.dayId);
+ next.schedule=before.concat(r.placements.map(p=>({...p})));
+ try{
+  V.validateState(next);
+  if(!V.validSchedule(next))throw Error('La propuesta provocaría un conflicto.');
+  if(ST.schedule.some(p=>p.dayId===r.dayId&&p.locked&&!next.schedule.some(q=>q.sceneId===p.sceneId&&q.dayId===p.dayId&&q.start===p.start&&q.locked)))throw Error('Una escena fijada se ha movido.');
+  if(ST.schedule.filter(p=>p.dayId===r.dayId).length!==r.placements.length)throw Error('La propuesta pierde sesiones.');
+ }catch(e){toast('No se aplicó: '+e.message);return;}
+ openConfirm({title:'Aplicar optimización',body:'<p>Se reordenará exclusivamente la jornada seleccionada. Puedes deshacer el cambio.</p>',okText:'Aplicar',onOk(){
+   App.undoOpt=ST.schedule.map(p=>({...p}));ST.schedule=next.schedule;
+   App.drafts={};App.prepProps=null;App.optRes=null;
+   persist('Convocatorias optimizadas');closeDlg($('#dlg-opt'));refresh();
+ }});
+};
+
+}
+function resetApp(){App.drafts={};App.undoOpt=null;App.prepProps=null;App.dayId=ST.days[0]?.id||null;App.prepDayId=null;App.discDayId=null;App.availActorId=null;App.availDayId=null;App.bkDayId=null;}
+/* ── Arranque ── */
+(function boot(){
+ let loaded=null,error=null;
+ try{loaded=V.load();}catch(e){error=e;}
+ if(loaded)setState(loaded);
+ else{setState(V.demo());persist();}
+ if(error){$('#boot-banner').hidden=false;$('#boot-banner-msg').textContent='('+error.message+') ';}
+ bindStatic();
+ refresh();
+ if(!loaded)toast('Demostración «27 Generation Tour» cargada');
+})();
+})();
+
+</script>
+</body>
+</html>
